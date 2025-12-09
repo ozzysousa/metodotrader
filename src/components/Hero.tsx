@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Shield, Clock } from "lucide-react";
+import TradingChart from "@/components/TradingChart";
 
 const AFFILIATE_LINK = "https://iqoption.net/lp/lite-form/pt/?aff=1616&afftrack=Landsite.Ai&aff_model=revenue";
 
 const Hero = () => {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+      {/* Animated Trading Chart Background */}
+      <TradingChart />
       {/* Background Effects */}
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-float" />

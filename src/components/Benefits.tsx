@@ -1,4 +1,5 @@
 import { Clock, Shield, Users, Zap, Globe, HeadphonesIcon } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const benefits = [
   {
@@ -42,48 +43,49 @@ const Benefits = () => {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            VANTAGENS
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Por Que Escolher a{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-bright">
-              IQ Option
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              VANTAGENS
             </span>
-            ?
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A plataforma mais confiável para traders que buscam excelência e resultados consistentes.
-          </p>
-        </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              Por Que Escolher a{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-bright">
+                IQ Option
+              </span>
+              ?
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              A plataforma mais confiável para traders que buscam excelência e resultados consistentes.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Benefits Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((benefit, index) => (
-            <div
-              key={benefit.title}
-              className="group relative p-8 rounded-2xl glass-card border border-border/30 hover:border-primary/40 transition-all duration-500"
-            >
-              {/* Icon */}
-              <div className="relative mb-6">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-cyan-bright/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <benefit.icon className="w-7 h-7 text-primary" />
+            <ScrollReveal key={benefit.title} delay={index * 0.1}>
+              <div className="group relative p-8 rounded-2xl glass-card border border-border/30 hover:border-primary/40 transition-all duration-500 h-full">
+                {/* Icon */}
+                <div className="relative mb-6">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-cyan-bright/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <benefit.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <div className="absolute -inset-4 bg-primary/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
-                <div className="absolute -inset-4 bg-primary/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                {/* Content */}
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  {benefit.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {benefit.description}
+                </p>
+
+                {/* Hover Line */}
+                <div className="absolute bottom-0 left-8 right-8 h-0.5 bg-gradient-to-r from-primary to-cyan-bright scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               </div>
-
-              {/* Content */}
-              <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                {benefit.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {benefit.description}
-              </p>
-
-              {/* Hover Line */}
-              <div className="absolute bottom-0 left-8 right-8 h-0.5 bg-gradient-to-r from-primary to-cyan-bright scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { TrendingUp, Shield, Zap } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const AFFILIATE_LINK = "https://iqoption.net/lp/lite-form/pt/?aff=1616&afftrack=Landsite.Ai&aff_model=revenue";
 
@@ -45,63 +45,63 @@ const Assets = () => {
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            ATIVOS DISPONÍVEIS
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Negocie os{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-bright">
-              Maiores Ativos
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              ATIVOS DISPONÍVEIS
             </span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Acesse Bitcoin, Ethereum e muito mais com spreads competitivos e execução instantânea.
-          </p>
-        </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              Negocie os{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-bright">
+                Maiores Ativos
+              </span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Acesse Bitcoin, Ethereum e muito mais com spreads competitivos e execução instantânea.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Assets Grid */}
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {assets.map((asset, index) => (
-            <div
-              key={asset.symbol}
-              className="group relative glass-card rounded-2xl p-8 border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_40px_hsl(168_100%_42%/0.2)]"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="relative z-10">
-                {/* Header */}
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center gap-4">
-                    <div className="relative">
-                      {asset.icon}
-                      <div className="absolute -inset-2 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+            <ScrollReveal key={asset.symbol} delay={index * 0.15} direction={index === 0 ? "left" : "right"}>
+              <div className="group relative glass-card rounded-2xl p-8 border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_40px_hsl(168_100%_42%/0.2)]">
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10">
+                  {/* Header */}
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-center gap-4">
+                      <div className="relative">
+                        {asset.icon}
+                        <div className="absolute -inset-2 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-foreground">{asset.name}</h3>
+                        <span className="text-muted-foreground">{asset.symbol}</span>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-foreground">{asset.name}</h3>
-                      <span className="text-muted-foreground">{asset.symbol}</span>
+                    <div className={`px-3 py-1 rounded-full bg-primary/10 ${asset.changeColor} font-semibold text-sm`}>
+                      {asset.change}
                     </div>
                   </div>
-                  <div className={`px-3 py-1 rounded-full bg-primary/10 ${asset.changeColor} font-semibold text-sm`}>
-                    {asset.change}
-                  </div>
+
+                  {/* Description */}
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {asset.description}
+                  </p>
+
+                  {/* CTA */}
+                  <Button variant="outlineGlow" className="w-full" asChild>
+                    <a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer">
+                      NEGOCIAR {asset.symbol}
+                    </a>
+                  </Button>
                 </div>
-
-                {/* Description */}
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {asset.description}
-                </p>
-
-                {/* CTA */}
-                <Button variant="outlineGlow" className="w-full" asChild>
-                  <a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer">
-                    NEGOCIAR {asset.symbol}
-                  </a>
-                </Button>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
@@ -113,10 +113,12 @@ const Assets = () => {
             { label: "Países", value: "190+" },
             { label: "Ativos", value: "250+" },
           ].map((stat, index) => (
-            <div key={stat.label} className="text-center p-6 glass-card rounded-xl border border-border/30">
-              <div className="text-2xl md:text-3xl font-bold text-primary mb-1">{stat.value}</div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
-            </div>
+            <ScrollReveal key={stat.label} delay={index * 0.1}>
+              <div className="text-center p-6 glass-card rounded-xl border border-border/30">
+                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">{stat.value}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

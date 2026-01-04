@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Shield, Clock } from "lucide-react";
 import TradingChart from "@/components/TradingChart";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const AFFILIATE_LINK = "https://iqoption.net/lp/lite-form/pt/?aff=1616&afftrack=Landsite.Ai&aff_model=revenue";
 
@@ -35,62 +36,72 @@ const Hero = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Rating Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-border/50 mb-8 animate-fade-in">
-            <div className="flex text-primary">
-              {"★★★☆☆".split("").map((star, i) => (
-                <span key={i} className={i < 3 ? "text-primary" : "text-muted-foreground/50"}>
-                  ★
-                </span>
-              ))}
+          <ScrollReveal delay={0}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-border/50 mb-8">
+              <div className="flex text-primary">
+                {"★★★☆☆".split("").map((star, i) => (
+                  <span key={i} className={i < 3 ? "text-primary" : "text-muted-foreground/50"}>
+                    ★
+                  </span>
+                ))}
+              </div>
+              <span className="text-muted-foreground text-sm">3,0 (2 avaliações)</span>
             </div>
-            <span className="text-muted-foreground text-sm">3,0 (2 avaliações)</span>
-          </div>
+          </ScrollReveal>
 
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-slide-up">
-            Domine o Mercado:{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-bright glow-text">
-              Negocie Opções Binárias
-            </span>{" "}
-            e Criptomoedas com Confiança
-          </h1>
+          <ScrollReveal delay={0.1}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
+              Domine o Mercado:{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-bright glow-text">
+                Negocie Opções Binárias
+              </span>{" "}
+              e Criptomoedas com Confiança
+            </h1>
+          </ScrollReveal>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-            Plataforma de trading segura, 24 horas por dia, com tecnologia de ponta para os maiores ativos, incluindo{" "}
-            <span className="text-primary font-semibold">Bitcoin</span> e{" "}
-            <span className="text-primary font-semibold">Ethereum</span> (Moeda D).
-          </p>
+          <ScrollReveal delay={0.2}>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+              Plataforma de trading segura, 24 horas por dia, com tecnologia de ponta para os maiores ativos, incluindo{" "}
+              <span className="text-primary font-semibold">Bitcoin</span> e{" "}
+              <span className="text-primary font-semibold">Ethereum</span> (Moeda D).
+            </p>
+          </ScrollReveal>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-slide-up" style={{ animationDelay: "0.4s" }}>
-            <Button variant="hero" size="xl" asChild>
-              <a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer">
-                COMECE A INVESTIR AGORA
-              </a>
-            </Button>
-            <Button variant="outlineGlow" size="xl" asChild>
-              <a href="#ativos">
-                CONHECER ATIVOS
-              </a>
-            </Button>
-          </div>
+          <ScrollReveal delay={0.3}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <Button variant="hero" size="xl" asChild>
+                <a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer">
+                  COMECE A INVESTIR AGORA
+                </a>
+              </Button>
+              <Button variant="outlineGlow" size="xl" asChild>
+                <a href="#ativos">
+                  CONHECER ATIVOS
+                </a>
+              </Button>
+            </div>
+          </ScrollReveal>
 
           {/* Feature Pills */}
-          <div className="flex flex-wrap justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.6s" }}>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-card">
-              <Clock className="w-4 h-4 text-primary" />
-              <span className="text-sm text-muted-foreground">24/7 Trading</span>
+          <ScrollReveal delay={0.4}>
+            <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-card">
+                <Clock className="w-4 h-4 text-primary" />
+                <span className="text-sm text-muted-foreground">24/7 Trading</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-card">
+                <Shield className="w-4 h-4 text-primary" />
+                <span className="text-sm text-muted-foreground">Plataforma Segura</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-card">
+                <TrendingUp className="w-4 h-4 text-primary" />
+                <span className="text-sm text-muted-foreground">+140% Bitcoin</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-card">
-              <Shield className="w-4 h-4 text-primary" />
-              <span className="text-sm text-muted-foreground">Plataforma Segura</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-card">
-              <TrendingUp className="w-4 h-4 text-primary" />
-              <span className="text-sm text-muted-foreground">+140% Bitcoin</span>
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
 

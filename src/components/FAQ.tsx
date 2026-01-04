@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const faqs = [
   {
@@ -39,58 +40,61 @@ const FAQ = () => {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            PERGUNTAS FREQUENTES
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Tire Suas{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-bright">
-              Dúvidas
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              PERGUNTAS FREQUENTES
             </span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Encontre respostas para as perguntas mais comuns sobre nossa plataforma.
-          </p>
-        </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              Tire Suas{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-bright">
+                Dúvidas
+              </span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Encontre respostas para as perguntas mais comuns sobre nossa plataforma.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* FAQ Accordion */}
         <div className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className={cn(
-                "glass-card rounded-xl border transition-all duration-300",
-                openIndex === index 
-                  ? "border-primary/50 shadow-[0_0_30px_hsl(168_100%_42%/0.1)]" 
-                  : "border-border/30 hover:border-border/60"
-              )}
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-6 text-left"
-              >
-                <span className="text-lg font-semibold text-foreground pr-4">
-                  {faq.question}
-                </span>
-                <ChevronDown 
-                  className={cn(
-                    "w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300",
-                    openIndex === index && "rotate-180"
-                  )}
-                />
-              </button>
+            <ScrollReveal key={index} delay={index * 0.08}>
               <div
                 className={cn(
-                  "overflow-hidden transition-all duration-300",
-                  openIndex === index ? "max-h-96" : "max-h-0"
+                  "glass-card rounded-xl border transition-all duration-300",
+                  openIndex === index 
+                    ? "border-primary/50 shadow-[0_0_30px_hsl(168_100%_42%/0.1)]" 
+                    : "border-border/30 hover:border-border/60"
                 )}
               >
-                <p className="px-6 pb-6 text-muted-foreground leading-relaxed">
-                  {faq.answer}
-                </p>
+                <button
+                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  className="w-full flex items-center justify-between p-6 text-left"
+                >
+                  <span className="text-lg font-semibold text-foreground pr-4">
+                    {faq.question}
+                  </span>
+                  <ChevronDown 
+                    className={cn(
+                      "w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300",
+                      openIndex === index && "rotate-180"
+                    )}
+                  />
+                </button>
+                <div
+                  className={cn(
+                    "overflow-hidden transition-all duration-300",
+                    openIndex === index ? "max-h-96" : "max-h-0"
+                  )}
+                >
+                  <p className="px-6 pb-6 text-muted-foreground leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

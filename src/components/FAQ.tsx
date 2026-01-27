@@ -10,11 +10,11 @@ const faqs = [
   },
   {
     question: "Qual o depósito mínimo para começar?",
-    answer: "O depósito mínimo na IQ Option é de apenas R$ 60 (ou equivalente em dólar). Isso permite que iniciantes comecem com um investimento baixo enquanto aprendem sobre o mercado."
+    answer: "O depósito mínimo no MétodoTrader é de apenas R$ 60 (ou equivalente em dólar). Isso permite que iniciantes comecem com um investimento baixo enquanto aprendem sobre o mercado."
   },
   {
     question: "É seguro negociar criptomoedas na plataforma?",
-    answer: "Sim, a IQ Option utiliza criptografia de nível bancário e autenticação de dois fatores para proteger sua conta e seus fundos. Além disso, mantemos os fundos dos clientes em contas segregadas."
+    answer: "Sim, o MétodoTrader utiliza criptografia de nível bancário e autenticação de dois fatores para proteger sua conta e seus fundos. Além disso, mantemos os fundos dos clientes em contas segregadas."
   },
   {
     question: "Posso negociar 24 horas por dia?",

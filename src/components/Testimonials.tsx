@@ -67,7 +67,7 @@ const Testimonials = () => {
               </span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Milhares de traders confiam na IQ Option para suas operações diárias.
+              Milhares de traders confiam no MétodoTrader para suas operações diárias.
             </p>
           </div>
         </ScrollReveal>

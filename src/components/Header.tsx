@@ -24,12 +24,12 @@ const Header = () => {
           <a href="#inicio" className="flex items-center gap-2">
             <div className="relative">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-cyan-bright flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">IQ</span>
+                <span className="text-primary-foreground font-bold text-lg">MT</span>
               </div>
               <div className="absolute -inset-1 bg-primary/20 rounded-xl blur-lg -z-10" />
             </div>
             <span className="text-xl font-bold text-foreground">
-              IQ <span className="text-primary">Option</span>
+              Método<span className="text-primary">Trader</span>
             </span>
           </a>
 

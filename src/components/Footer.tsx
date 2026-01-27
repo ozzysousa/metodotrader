@@ -18,7 +18,7 @@ const Footer = () => {
                 <strong>O seu capital pode estar em risco.</strong> Opções binárias envolvem alto risco financeiro. 
                 A negociação de opções binárias e criptomoedas pode não ser adequada para todos os investidores. 
                 Você pode perder parte ou todo o seu capital investido. Antes de decidir negociar, considere cuidadosamente seus objetivos de investimento, 
-                nível de experiência e tolerância ao risco. O MétodoTrader não fornece aconselhamento financeiro. Negocie com responsabilidade.
+                nível de experiência e tolerância ao risco. A IQ Option não fornece aconselhamento financeiro. Negocie com responsabilidade.
               </p>
             </div>
           </div>

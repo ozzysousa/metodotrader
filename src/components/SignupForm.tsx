@@ -113,7 +113,7 @@ const SignupForm = () => {
                 </span>
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Junte-se a mais de 48 milhões de traders que confiam no MétodoTrader para suas operações.
+                Junte-se a mais de 48 milhões de traders que confiam na IQ Option para suas operações.
               </p>
 
               {/* Benefits */}

@@ -49,9 +49,9 @@ const Benefits = () => {
               VANTAGENS
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Por Que Escolher o{" "}
+              Por Que Escolher a{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-bright">
-                MétodoTrader
+                IQ Option
               </span>
               ?
             </h2>

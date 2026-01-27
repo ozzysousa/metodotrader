@@ -141,8 +141,8 @@ const SignupForm = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
-                    Cadastre-se Grátis
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 text-center">
+                    Comece Agora Mesmo
                   </h3>
 
                   {/* Name Field */}
@@ -229,7 +229,7 @@ const SignupForm = () => {
                       </span>
                     ) : (
                       <span className="flex items-center gap-2">
-                        CRIAR CONTA GRÁTIS
+                        Começar com Conta de Treinamento Grátis
                         <ArrowRight className="w-5 h-5" />
                       </span>
                     )}

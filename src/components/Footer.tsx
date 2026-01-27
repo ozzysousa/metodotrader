@@ -15,8 +15,9 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold text-foreground mb-2">Aviso de Risco</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                A negociação de opções binárias e criptomoedas envolve um alto nível de risco e pode não ser adequada para todos os investidores. 
-                Você pode perder parte ou todo o seu capital investido. Antes de decidir negociar, você deve considerar cuidadosamente seus objetivos de investimento, 
+                <strong>O seu capital pode estar em risco.</strong> Opções binárias envolvem alto risco financeiro. 
+                A negociação de opções binárias e criptomoedas pode não ser adequada para todos os investidores. 
+                Você pode perder parte ou todo o seu capital investido. Antes de decidir negociar, considere cuidadosamente seus objetivos de investimento, 
                 nível de experiência e tolerância ao risco. A IQ Option não fornece aconselhamento financeiro. Negocie com responsabilidade.
               </p>
             </div>

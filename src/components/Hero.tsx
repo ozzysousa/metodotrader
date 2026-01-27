@@ -51,7 +51,7 @@ const Hero = () => {
 
           {/* Main Headline */}
           <ScrollReveal delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 px-2">
               Domine o Mercado:{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-bright glow-text">
                 Negocie Opções Binárias

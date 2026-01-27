@@ -8,12 +8,13 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "Início", href: "#inicio" },
-    { label: "Plataforma", href: "#plataforma" },
-    { label: "Ativos", href: "#ativos" },
-    { label: "Depoimentos", href: "#depoimentos" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Contato", href: "#contato" },
+    { label: "Início", href: "/#inicio" },
+    { label: "Plataforma", href: "/#plataforma" },
+    { label: "Ativos", href: "/#ativos" },
+    { label: "Blog", href: "/blog" },
+    { label: "Depoimentos", href: "/#depoimentos" },
+    { label: "FAQ", href: "/#faq" },
+    { label: "Contato", href: "/#contato" },
   ];
 
   return (
@@ -36,13 +37,23 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium"
-              >
-                {link.label}
-              </a>
+              link.href.startsWith('/') && !link.href.startsWith('/#') ? (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium"
+                >
+                  {link.label}
+                </a>
+              )
             ))}
           </nav>
 

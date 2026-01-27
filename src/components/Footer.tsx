@@ -18,7 +18,7 @@ const Footer = () => {
                 <strong>O seu capital pode estar em risco.</strong> Opções binárias envolvem alto risco financeiro. 
                 A negociação de opções binárias e criptomoedas pode não ser adequada para todos os investidores. 
                 Você pode perder parte ou todo o seu capital investido. Antes de decidir negociar, considere cuidadosamente seus objetivos de investimento, 
-                nível de experiência e tolerância ao risco. A IQ Option não fornece aconselhamento financeiro. Negocie com responsabilidade.
+                nível de experiência e tolerância ao risco. O MétodoTrader não fornece aconselhamento financeiro. Negocie com responsabilidade.
               </p>
             </div>
           </div>
@@ -32,14 +32,14 @@ const Footer = () => {
             <div className="lg:col-span-1">
               <a href="#inicio" className="flex items-center gap-2 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-cyan-bright flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-lg">IQ</span>
+                  <span className="text-primary-foreground font-bold text-lg">MT</span>
                 </div>
                 <span className="text-xl font-bold text-foreground">
-                  IQ <span className="text-primary">Option</span>
+                  Método<span className="text-primary">Trader</span>
                 </span>
               </a>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Plataforma líder em trading de opções binárias e criptomoedas. Negocie com confiança.
+                Sua plataforma de referência para trading de opções binárias e criptomoedas. Negocie com confiança.
               </p>
               <Button variant="hero" size="default" asChild>
                 <a href={AFFILIATE_LINK} target="_blank" rel="noopener noreferrer">
@@ -118,7 +118,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-border/30">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground text-center md:text-left">
-              © {new Date().getFullYear()} IQ Option. Todos os direitos reservados.
+              © {new Date().getFullYear()} MétodoTrader. Todos os direitos reservados.
             </p>
             <div className="flex items-center gap-6">
               <span className="text-xs text-muted-foreground/60">

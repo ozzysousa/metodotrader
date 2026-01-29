@@ -3,7 +3,7 @@ import { TrendingUp, Shield, Clock } from "lucide-react";
 import TradingChart from "@/components/TradingChart";
 import ScrollReveal from "@/components/ScrollReveal";
 
-const AFFILIATE_LINK = "https://iqoption.net/lp/lite-form/pt/?aff=1616&afftrack=Landsite.Ai&aff_model=revenue";
+const AFFILIATE_LINK = "https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue";
 
 const Hero = () => {
   return (

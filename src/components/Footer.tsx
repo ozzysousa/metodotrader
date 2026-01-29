@@ -1,12 +1,13 @@
-import { MapPin, Phone, AlertTriangle } from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
 
-const AFFILIATE_LINK = "https://iqoption.net/lp/lite-form/pt/?aff=1616&afftrack=Landsite.Ai&aff_model=revenue";
+const AFFILIATE_LINK = "https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue";
 
 const Footer = () => {
   return (
-    <footer id="contato" className="relative pt-24 pb-8 border-t border-border/30">
+    <footer className="relative pt-24 pb-8 border-t border-border/30">
       {/* Risk Warning */}
       <div className="container mx-auto px-4 lg:px-8 mb-16">
         <div className="p-6 rounded-xl bg-destructive/10 border border-destructive/30">
@@ -30,7 +31,7 @@ const Footer = () => {
           {/* Brand */}
           <ScrollReveal delay={0}>
             <div className="lg:col-span-1">
-              <a href="#inicio" className="flex items-center gap-2 mb-6">
+              <a href="/#inicio" className="flex items-center gap-2 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-cyan-bright flex items-center justify-center">
                   <span className="text-primary-foreground font-bold text-lg">MT</span>
                 </div>
@@ -54,16 +55,26 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold text-foreground mb-6">Navegação</h4>
               <ul className="space-y-3">
-                {["Início", "Plataforma", "Ativos", "Suporte"].map((link) => (
-                  <li key={link}>
-                    <a
-                      href={`#${link.toLowerCase()}`}
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                <li>
+                  <a href="/#inicio" className="text-muted-foreground hover:text-primary transition-colors">
+                    Início
+                  </a>
+                </li>
+                <li>
+                  <a href="/#plataforma" className="text-muted-foreground hover:text-primary transition-colors">
+                    Plataforma
+                  </a>
+                </li>
+                <li>
+                  <a href="/#ativos" className="text-muted-foreground hover:text-primary transition-colors">
+                    Ativos
+                  </a>
+                </li>
+                <li>
+                  <Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors">
+                    Blog
+                  </Link>
+                </li>
               </ul>
             </div>
           </ScrollReveal>
@@ -73,43 +84,63 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold text-foreground mb-6">Legal</h4>
               <ul className="space-y-3">
-                {["Termos de Uso", "Política de Privacidade", "Cookies", "Regulamentação"].map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                <li>
+                  <Link to="/termos-de-uso" className="text-muted-foreground hover:text-primary transition-colors">
+                    Termos de Uso
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/politica-de-privacidade" className="text-muted-foreground hover:text-primary transition-colors">
+                    Política de Privacidade
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/cookies" className="text-muted-foreground hover:text-primary transition-colors">
+                    Cookies
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/regulamentacao" className="text-muted-foreground hover:text-primary transition-colors">
+                    Regulamentação
+                  </Link>
+                </li>
               </ul>
             </div>
           </ScrollReveal>
 
-          {/* Contact */}
+          {/* App Download */}
           <ScrollReveal delay={0.3}>
-            <div id="suporte">
-              <h4 className="font-semibold text-foreground mb-6">Contato</h4>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground text-sm">
-                    St. Sudoeste CCSW 1 Lote 04 Bloco C - Sudoeste/Octogonal, Brasília - DF, 70297-400
-                    <br />
-                    <span className="text-muted-foreground/70">(Condomínio Portal Master, Bloco C)</span>
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-primary" />
-                  <a
-                    href="tel:+5561996662833"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    (61) 99666-2833
-                  </a>
-                </li>
-              </ul>
+            <div>
+              <h4 className="font-semibold text-foreground mb-6">Baixe o App</h4>
+              <p className="text-muted-foreground text-sm mb-4">
+                Negocie de qualquer lugar com o aplicativo oficial da IQ Option.
+              </p>
+              <div className="flex flex-col gap-3">
+                <a
+                  href={AFFILIATE_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block transition-transform hover:scale-105"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                    alt="Disponível no Google Play"
+                    className="h-12 w-auto"
+                  />
+                </a>
+                <a
+                  href={AFFILIATE_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block transition-transform hover:scale-105"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                    alt="Baixar na App Store"
+                    className="h-12 w-auto"
+                  />
+                </a>
+              </div>
             </div>
           </ScrollReveal>
         </div>

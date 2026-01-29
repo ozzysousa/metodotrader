@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
-const AFFILIATE_LINK = "https://iqoption.net/lp/lite-form/pt/?aff=1616&afftrack=Landsite.Ai&aff_model=revenue";
+const AFFILIATE_LINK = "https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,7 +14,6 @@ const Header = () => {
     { label: "Blog", href: "/blog" },
     { label: "Depoimentos", href: "/#depoimentos" },
     { label: "FAQ", href: "/#faq" },
-    { label: "Contato", href: "/#contato" },
   ];
 
   return (

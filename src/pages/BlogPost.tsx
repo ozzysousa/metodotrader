@@ -176,21 +176,47 @@ const BlogPost = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="max-w-4xl mx-auto prose prose-invert prose-lg max-w-none
               prose-headings:text-foreground prose-headings:font-bold
-              prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
-              prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-              prose-h4:text-xl prose-h4:mt-6 prose-h4:mb-3
-              prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6
-              prose-li:text-muted-foreground
+              prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-5 prose-h2:border-b prose-h2:border-border/30 prose-h2:pb-3
+              prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
+              prose-h4:text-lg prose-h4:mt-6 prose-h4:mb-3
+              prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-4 prose-p:text-justify
+              prose-li:text-muted-foreground prose-li:mb-2
               prose-strong:text-foreground prose-strong:font-semibold
-              prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+              prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-a:font-medium
               prose-code:text-primary prose-code:bg-primary/10 prose-code:px-2 prose-code:py-1 prose-code:rounded
               prose-pre:bg-card/50 prose-pre:border prose-pre:border-border/50
-              prose-blockquote:border-primary prose-blockquote:bg-primary/5 prose-blockquote:py-2 prose-blockquote:rounded-r-lg
+              prose-blockquote:border-primary prose-blockquote:bg-primary/5 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic
               prose-table:border-border/50
-              prose-th:text-foreground prose-th:bg-card/50
-              prose-td:text-muted-foreground prose-td:border-border/30"
-            dangerouslySetInnerHTML={{ __html: formatContent(post.content) }}
+              prose-th:text-foreground prose-th:bg-card/50 prose-th:p-3 prose-th:text-left
+              prose-td:text-muted-foreground prose-td:border-border/30 prose-td:p-3
+              prose-ul:my-4 prose-ol:my-4
+              [&_.lead]:text-lg [&_.lead]:text-muted-foreground [&_.lead]:leading-relaxed
+              [&_.highlight-box]:bg-primary/10 [&_.highlight-box]:border-l-4 [&_.highlight-box]:border-primary [&_.highlight-box]:p-4 [&_.highlight-box]:rounded-r-lg [&_.highlight-box]:my-6
+              [&_.warning-box]:bg-destructive/10 [&_.warning-box]:border-l-4 [&_.warning-box]:border-destructive [&_.warning-box]:p-4 [&_.warning-box]:rounded-r-lg [&_.warning-box]:my-6
+              [&_.pro-tip]:bg-cyan-500/10 [&_.pro-tip]:border-l-4 [&_.pro-tip]:border-cyan-500 [&_.pro-tip]:p-4 [&_.pro-tip]:rounded-r-lg [&_.pro-tip]:my-6
+              [&_.feature-grid]:grid [&_.feature-grid]:md:grid-cols-2 [&_.feature-grid]:gap-4 [&_.feature-grid]:my-6
+              [&_.feature-item]:bg-card/50 [&_.feature-item]:border [&_.feature-item]:border-border/50 [&_.feature-item]:rounded-lg [&_.feature-item]:p-4
+              [&_.steps-list]:space-y-3 [&_.steps-list>li]:bg-card/30 [&_.steps-list>li]:p-3 [&_.steps-list>li]:rounded-lg [&_.steps-list>li]:border [&_.steps-list>li]:border-border/30
+              [&_.data-table]:w-full [&_.data-table]:border-collapse [&_.data-table]:my-6
+              [&_.pattern-box]:bg-card/50 [&_.pattern-box]:border [&_.pattern-box]:border-border/50 [&_.pattern-box]:rounded-lg [&_.pattern-box]:p-5 [&_.pattern-box]:my-6
+              [&_.checklist-box]:bg-card/50 [&_.checklist-box]:border [&_.checklist-box]:border-border/50 [&_.checklist-box]:rounded-lg [&_.checklist-box]:p-5 [&_.checklist-box]:my-6
+              [&_.author-note]:bg-muted/30 [&_.author-note]:border [&_.author-note]:border-border/50 [&_.author-note]:rounded-lg [&_.author-note]:p-4 [&_.author-note]:my-8 [&_.author-note]:text-sm"
+            dangerouslySetInnerHTML={{ __html: post.content }}
           />
+          
+          {/* Tags */}
+          {post.tags && post.tags.length > 0 && (
+            <div className="max-w-4xl mx-auto mt-8 pt-6 border-t border-border/30">
+              <h4 className="text-sm font-semibold text-muted-foreground mb-3">Tags:</h4>
+              <div className="flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <Badge key={tag} variant="outline" className="text-xs">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          )}
           
           <div className="max-w-4xl mx-auto">
             <BlogCTA />

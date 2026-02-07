@@ -2,6 +2,7 @@ import { AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
+import logo from "@/assets/logo.png";
 
 const AFFILIATE_LINK = "https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue";
 
@@ -32,9 +33,7 @@ const Footer = () => {
           <ScrollReveal delay={0}>
             <div className="lg:col-span-1">
               <a href="/#inicio" className="flex items-center gap-2 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-cyan-bright flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-lg">MT</span>
-                </div>
+                <img src={logo} alt="MétodoTrader Logo" className="w-10 h-10 object-contain" />
                 <span className="text-xl font-bold text-foreground">
                   Método<span className="text-primary">Trader</span>
                 </span>

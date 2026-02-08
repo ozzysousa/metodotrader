@@ -23,7 +23,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <a href="#inicio" className="flex items-center gap-2">
-            <img src={logo} alt="MétodoTrader Logo" className="w-10 h-10 object-contain" />
+            <img src={logo} alt="MétodoTrader Logo" width={40} height={40} className="w-10 h-10 object-contain" />
             <span className="text-xl font-bold text-foreground">
               Método<span className="text-primary">Trader</span>
             </span>

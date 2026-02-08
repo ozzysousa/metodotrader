@@ -33,7 +33,7 @@ const Footer = () => {
           <ScrollReveal delay={0}>
             <div className="lg:col-span-1">
               <a href="/#inicio" className="flex items-center gap-2 mb-6">
-                <img src={logo} alt="MétodoTrader Logo" className="w-10 h-10 object-contain" />
+                <img src={logo} alt="MétodoTrader Logo" width={40} height={40} className="w-10 h-10 object-contain" />
                 <span className="text-xl font-bold text-foreground">
                   Método<span className="text-primary">Trader</span>
                 </span>
@@ -124,6 +124,8 @@ const Footer = () => {
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                     alt="Disponível no Google Play"
+                    width={162}
+                    height={48}
                     className="h-12 w-auto"
                   />
                 </a>
@@ -136,6 +138,8 @@ const Footer = () => {
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                     alt="Baixar na App Store"
+                    width={162}
+                    height={48}
                     className="h-12 w-auto"
                   />
                 </a>

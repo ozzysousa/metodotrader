@@ -195,7 +195,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-27",
     readTime: "8 min",
     category: "Iniciantes",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=450&h=225&fit=crop&fm=webp&q=80",
     images: [
       {
         url: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200",
@@ -364,7 +364,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-26",
     readTime: "12 min",
     category: "Estratégias",
-    image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Suporte e Resistência", "Análise Técnica", "Estratégia de Trading", "Price Action", "Pontos de Entrada", "IQ Option"],
     metaTitle: "Estratégia de Suporte e Resistência para Trading | MétodoTrader",
     metaDescription: "Aprenda a identificar níveis de suporte e resistência para melhorar suas operações. Guia completo do MétodoTrader para traders iniciantes e avançados."
@@ -541,7 +541,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-25",
     readTime: "9 min",
     category: "Educacional",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Erros de Trading", "Iniciantes", "Gerenciamento de Risco", "Psicologia do Trader", "Overtrading", "Controle Emocional"],
     metaTitle: "5 Erros que Fazem Traders Perderem Dinheiro | MétodoTrader",
     metaDescription: "Descubra os 5 erros mais comuns que fazem 90% dos traders iniciantes perderem dinheiro e aprenda como evitá-los com as dicas do MétodoTrader."
@@ -780,7 +780,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-24",
     readTime: "11 min",
     category: "Gerenciamento",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Gerenciamento de Banca", "Gestão de Risco", "Position Sizing", "Planilha de Trading", "Capital", "Regra dos 2%"],
     metaTitle: "Gerenciamento de Banca para Traders | Planilha e Método MétodoTrader",
     metaDescription: "Aprenda a gerenciar sua banca como um profissional. Planilha e métodos do MétodoTrader para proteger seu capital e maximizar lucros de forma consistente."
@@ -977,7 +977,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-23",
     readTime: "10 min",
     category: "Plataforma",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["IQ Option", "Segurança", "Pix", "Saques", "Confiável", "Regulamentação", "Brasil", "Depósitos"],
     metaTitle: "IQ Option é Confiável? Análise Completa + Saques via Pix | MétodoTrader",
     metaDescription: "Descubra se a IQ Option é confiável e como funcionam os saques via Pix para brasileiros. Análise completa do MétodoTrader sobre segurança e pagamentos."
@@ -1206,7 +1206,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-22",
     readTime: "14 min",
     category: "Análise Técnica",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Candlesticks", "Análise Técnica", "Padrões de Velas", "Martelo", "Engolfo", "Doji", "Reversão", "Trading"],
     metaTitle: "Guia Completo de Candlesticks para Iniciantes | MétodoTrader",
     metaDescription: "Aprenda a ler gráficos de velas (candlesticks) do zero. Guia completo do MétodoTrader com padrões de reversão, continuação e dicas profissionais."
@@ -1454,7 +1454,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-21",
     readTime: "13 min",
     category: "Mindset",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Mindset", "Psicologia do Trader", "Controle Emocional", "Disciplina", "Medo", "Ganância", "Diário de Trading"],
     metaTitle: "Mindset de Trader: Guia de Controle Emocional | MétodoTrader",
     metaDescription: "Aprenda a controlar suas emoções no trading. Técnicas comprovadas do MétodoTrader para desenvolver o mindset de um trader profissional de sucesso."
@@ -1685,7 +1685,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-20",
     readTime: "10 min",
     category: "Estratégias",
-    image: "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=800&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Horários de Trading", "Sessões de Mercado", "Forex", "Brasil", "Volatilidade", "Liquidez", "Rotina de Trader"],
     metaTitle: "Melhores Horários para Operar Opções Binárias no Brasil | MétodoTrader",
     metaDescription: "Descubra os melhores horários para operar opções binárias no Brasil. Guia completo do MétodoTrader com sessões de mercado e dicas de volatilidade."
@@ -1915,7 +1915,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-19",
     readTime: "11 min",
     category: "Avançado",
-    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Opções Digitais", "Opções Binárias", "Payout", "IQ Option", "Trading Avançado", "Alavancagem"],
     metaTitle: "Opções Digitais: Como Alavancar Ganhos na IQ Option | MétodoTrader",
     metaDescription: "Entenda o que são opções digitais e como usá-las para maximizar lucros com payouts de até 900%. Guia completo do MétodoTrader com estratégias e dicas."
@@ -2241,7 +2241,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-18",
     readTime: "12 min",
     category: "Análise",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Calendário Econômico", "NFP", "Taxa de Juros", "Indicadores", "Análise Fundamentalista", "Fed", "Selic", "Volatilidade"],
     metaTitle: "Calendário Econômico para Traders: Guia Completo | MétodoTrader",
     metaDescription: "Aprenda a usar o calendário econômico para evitar prejuízos e encontrar oportunidades. Guia completo do MétodoTrader com indicadores e estratégias."

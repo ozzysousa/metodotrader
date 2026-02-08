@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock, User, Share2 } from "lucide-react";
 import { motion } from "framer-motion";
+import DOMPurify from "dompurify";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BlogCard from "@/components/blog/BlogCard";
@@ -201,7 +202,7 @@ const BlogPost = () => {
               [&_.pattern-box]:bg-card/50 [&_.pattern-box]:border [&_.pattern-box]:border-border/50 [&_.pattern-box]:rounded-lg [&_.pattern-box]:p-5 [&_.pattern-box]:my-6
               [&_.checklist-box]:bg-card/50 [&_.checklist-box]:border [&_.checklist-box]:border-border/50 [&_.checklist-box]:rounded-lg [&_.checklist-box]:p-5 [&_.checklist-box]:my-6
               [&_.author-note]:bg-muted/30 [&_.author-note]:border [&_.author-note]:border-border/50 [&_.author-note]:rounded-lg [&_.author-note]:p-4 [&_.author-note]:my-8 [&_.author-note]:text-sm"
-            dangerouslySetInnerHTML={{ __html: post.content }}
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content, { USE_PROFILES: { html: true } }) }}
           />
           
           {/* Tags */}

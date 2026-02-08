@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowRight, CheckCircle, Mail, User, Lock, AlertCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Mail, User, AlertCircle } from "lucide-react";
 import { z } from "zod";
 
 const AFFILIATE_LINK = "https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue";
@@ -9,7 +9,6 @@ const AFFILIATE_LINK = "https://iqoption.net/lp/start/en/?aff=1616&afftrack=meto
 const signupSchema = z.object({
   name: z.string().trim().min(2, "Nome deve ter pelo menos 2 caracteres").max(100, "Nome muito longo"),
   email: z.string().trim().email("Email inválido").max(255, "Email muito longo"),
-  password: z.string().min(6, "Senha deve ter pelo menos 6 caracteres").max(50, "Senha muito longa"),
 });
 
 type FormData = z.infer<typeof signupSchema>;
@@ -19,7 +18,6 @@ const SignupForm = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
-    password: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -81,7 +79,7 @@ const SignupForm = () => {
         window.open(`${AFFILIATE_LINK}&${params.toString()}`, "_blank");
         setIsSubmitting(false);
         setIsSuccess(false);
-        setFormData({ name: "", email: "", password: "" });
+        setFormData({ name: "", email: "" });
       }, 1500);
     }, 800);
   };
@@ -191,28 +189,6 @@ const SignupForm = () => {
                     )}
                   </div>
 
-                  {/* Password Field */}
-                  <div className="space-y-2">
-                    <div className="relative">
-                      <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                      <Input
-                        type="password"
-                        placeholder="Crie uma senha"
-                        value={formData.password}
-                        onChange={(e) => handleChange("password", e.target.value)}
-                        onBlur={() => handleBlur("password")}
-                        className={`pl-12 h-14 bg-secondary/50 border-border/50 focus:border-primary ${
-                          errors.password ? "border-destructive" : ""
-                        }`}
-                      />
-                    </div>
-                    {errors.password && (
-                      <p className="text-sm text-destructive flex items-center gap-1">
-                        <AlertCircle className="w-4 h-4" />
-                        {errors.password}
-                      </p>
-                    )}
-                  </div>
 
                   {/* Submit Button */}
                   <Button

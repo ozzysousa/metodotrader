@@ -256,28 +256,4 @@ const BlogPost = () => {
   );
 };
 
-// Simple markdown-like formatting
-function formatContent(content: string): string {
-  return content
-    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-    .replace(/^#### (.*$)/gim, '<h4>$1</h4>')
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    .replace(/`([^`]+)`/g, '<code>$1</code>')
-    .replace(/^- (.*$)/gim, '<li>$1</li>')
-    .replace(/^(\d+)\. (.*$)/gim, '<li>$2</li>')
-    .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
-    .replace(/\n\n/g, '</p><p>')
-    .replace(/^(?!<[hulo])/gm, '<p>')
-    .replace(/(?<![>])$/gm, '</p>')
-    .replace(/<p><\/p>/g, '')
-    .replace(/<p>(<[hulo])/g, '$1')
-    .replace(/(<\/[hulo][^>]*>)<\/p>/g, '$1')
-    .replace(/(<li>)/g, '</ul>$1')
-    .replace(/<\/ul><li>/g, '<li>')
-    .replace(/(<li>.*?<\/li>)(?!<li>)/gs, '<ul>$1</ul>')
-    .replace(/<\/ul><ul>/g, '');
-}
-
 export default BlogPost;

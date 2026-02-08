@@ -2,12 +2,26 @@ import { Button } from "@/components/ui/button";
 import { TrendingUp, Shield, Clock } from "lucide-react";
 import TradingChart from "@/components/TradingChart";
 import ScrollReveal from "@/components/ScrollReveal";
+import heroVideo from "@/assets/hero-video.mp4";
 
 const AFFILIATE_LINK = "https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue";
 
 const Hero = () => {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover opacity-40"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+      </div>
       {/* Animated Trading Chart Background */}
       <TradingChart />
       {/* Background Effects */}

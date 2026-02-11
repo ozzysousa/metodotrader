@@ -201,7 +201,10 @@ const BlogPost = () => {
               [&_.data-table]:w-full [&_.data-table]:border-collapse [&_.data-table]:my-6
               [&_.pattern-box]:bg-card/50 [&_.pattern-box]:border [&_.pattern-box]:border-border/50 [&_.pattern-box]:rounded-lg [&_.pattern-box]:p-5 [&_.pattern-box]:my-6
               [&_.checklist-box]:bg-card/50 [&_.checklist-box]:border [&_.checklist-box]:border-border/50 [&_.checklist-box]:rounded-lg [&_.checklist-box]:p-5 [&_.checklist-box]:my-6
-              [&_.author-note]:bg-muted/30 [&_.author-note]:border [&_.author-note]:border-border/50 [&_.author-note]:rounded-lg [&_.author-note]:p-4 [&_.author-note]:my-8 [&_.author-note]:text-sm"
+              [&_.author-note]:bg-muted/30 [&_.author-note]:border [&_.author-note]:border-border/50 [&_.author-note]:rounded-lg [&_.author-note]:p-4 [&_.author-note]:my-8 [&_.author-note]:text-sm
+              prose-figure:my-8 prose-figure:rounded-xl prose-figure:overflow-hidden
+              prose-img:rounded-xl prose-img:shadow-lg prose-img:border prose-img:border-border/30
+              prose-figcaption:text-center prose-figcaption:text-sm prose-figcaption:mt-3 prose-figcaption:italic"
             dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content, { USE_PROFILES: { html: true } }) }}
           />
           

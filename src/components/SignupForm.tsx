@@ -97,14 +97,14 @@ const SignupForm = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-primary/10 rounded-full blur-[150px]" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-5xl mx-auto overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-w-0">
             {/* Left Content */}
             <div>
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
                 COMECE AGORA
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 break-words">
                 Crie Sua Conta{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-bright">
                   Gratuitamente
@@ -128,7 +128,7 @@ const SignupForm = () => {
             </div>
 
             {/* Form Card */}
-            <div className="glass-card rounded-2xl p-8 border border-border/50 shadow-[0_0_60px_hsl(168_100%_42%/0.1)]">
+            <div className="glass-card rounded-2xl p-4 sm:p-8 border border-border/50 shadow-[0_0_60px_hsl(168_100%_42%/0.1)] min-w-0">
               {isSuccess ? (
                 <div className="text-center py-8">
                   <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
@@ -139,7 +139,7 @@ const SignupForm = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 text-center">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-6 text-center">
                     Comece Agora Mesmo
                   </h3>
 
@@ -204,9 +204,10 @@ const SignupForm = () => {
                         Processando...
                       </span>
                     ) : (
-                      <span className="flex items-center gap-2">
-                        Começar com Conta de Treinamento Grátis
-                        <ArrowRight className="w-5 h-5" />
+                      <span className="flex items-center gap-2 text-sm sm:text-base">
+                        <span className="hidden sm:inline">Começar com Conta de Treinamento Grátis</span>
+                        <span className="sm:hidden">Criar Conta Grátis</span>
+                        <ArrowRight className="w-5 h-5 flex-shrink-0" />
                       </span>
                     )}
                   </Button>

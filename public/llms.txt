@@ -1,0 +1,16 @@
+# Método Trader
+
+> Portal educacional em português sobre Opções Binárias e Criptomoedas (Bitcoin, Ethereum) na plataforma IQ Option, com estratégias, análises de mercado e conteúdo para iniciantes e traders intermediários.
+
+## Pages
+
+- [Home](/): Visão geral do Método Trader, ativos disponíveis, benefícios, FAQ e cadastro.
+- [Blog](/blog): Artigos educacionais sobre trading, análise técnica e criptomoedas.
+- [Termos de Uso](/termos-de-uso): Condições de uso do portal.
+- [Política de Privacidade](/politica-de-privacidade): Como tratamos os dados dos usuários.
+- [Cookies](/cookies): Política de cookies do site.
+- [Regulamentação](/regulamentacao): Informações regulatórias e avisos de risco.
+
+## Optional
+
+- Aviso: A IQ Option não fornece aconselhamento financeiro. O seu capital pode estar em risco.

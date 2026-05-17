@@ -54,7 +54,7 @@ const Hero = () => {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-border/50 mb-8">
               <div className="flex text-primary">
                 {"★★★☆☆".split("").map((_, i) => (
-                  <span key={i} className={i < 3 ? "text-primary" : "text-muted-foreground/50"}>
+                  <span key={i} className={i < 3 ? "text-primary" : "text-muted-foreground"}>
                     ★
                   </span>
                 ))}

@@ -9,24 +9,6 @@ const AFFILIATE_LINK = "https://iqoption.net/lp/start/en/?aff=1616&afftrack=meto
 const Footer = () => {
   return (
     <footer className="relative pt-24 pb-8 border-t border-border/30">
-      {/* Risk Warning */}
-      <div className="container mx-auto px-4 lg:px-8 mb-16">
-        <div className="p-6 rounded-xl bg-destructive/10 border border-destructive/30">
-          <div className="flex items-start gap-4">
-            <AlertTriangle className="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" />
-            <div>
-              <h4 className="font-semibold text-foreground mb-2">Aviso de Risco</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                <strong>O seu capital pode estar em risco.</strong> Opções binárias envolvem alto risco financeiro. 
-                A negociação de opções binárias e criptomoedas pode não ser adequada para todos os investidores. 
-                Você pode perder parte ou todo o seu capital investido. Antes de decidir negociar, considere cuidadosamente seus objetivos de investimento, 
-                nível de experiência e tolerância ao risco. A IQ Option não fornece aconselhamento financeiro. Negocie com responsabilidade.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
@@ -158,6 +140,24 @@ const Footer = () => {
               <span className="text-xs text-muted-foreground/60">
                 Investimentos envolvem riscos. Negocie com responsabilidade.
               </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Risk Warning - Bottom */}
+        <div className="mt-12 pt-8 border-t border-border/30">
+          <div className="p-6 rounded-xl bg-destructive/10 border border-destructive/30">
+            <div className="flex items-start gap-4">
+              <AlertTriangle className="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" />
+              <div>
+                <h4 className="font-semibold text-foreground mb-2">Aviso de Risco</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  <strong>O seu capital pode estar em risco.</strong> Opções binárias envolvem alto risco financeiro.
+                  A negociação de opções binárias e criptomoedas pode não ser adequada para todos os investidores.
+                  Você pode perder parte ou todo o seu capital investido. Antes de decidir negociar, considere cuidadosamente seus objetivos de investimento,
+                  nível de experiência e tolerância ao risco. A IQ Option não fornece aconselhamento financeiro. Negocie com responsabilidade.
+                </p>
+              </div>
             </div>
           </div>
         </div>

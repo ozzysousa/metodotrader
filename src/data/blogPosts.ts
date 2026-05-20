@@ -19,7 +19,7 @@ export interface BlogPost {
   metaDescription: string;
 }
 
-export const AFFILIATE_LINK = "https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueafftrack=metodotraderhttps://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueaff_model=revenue";
+export const AFFILIATE_LINK = "https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenue";
 
 export const SEO_KEYWORDS = [
   "IQ Option",

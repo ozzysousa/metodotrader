@@ -4,7 +4,7 @@ import TradingChart from "@/components/TradingChart";
 import ScrollReveal from "@/components/ScrollReveal";
 import heroVideo from "@/assets/hero-video.mp4";
 
-const AFFILIATE_LINK = "https://iqoption.net/land/start-trading/pt/?aff=1616https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenueafftrack=metodotraderhttps://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenueaff_model=revenue";
+const AFFILIATE_LINK = "https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueafftrack=metodotraderhttps://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueaff_model=revenue";
 
 const Hero = () => {
   return (

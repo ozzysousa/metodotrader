@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import BlogCard from "@/components/blog/BlogCard";
 import BlogCTA from "@/components/blog/BlogCTA";
 import FloatingCTA from "@/components/blog/FloatingCTA";
+import MidArticleCTA from "@/components/blog/MidArticleCTA";
 import { getPostBySlug, getRelatedPosts, SEO_KEYWORDS } from "@/data/blogPosts";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -171,11 +172,26 @@ const BlogPost = () => {
       {/* Content */}
       <section className="pb-12">
         <div className="container mx-auto px-4 lg:px-8">
-          <motion.article
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="max-w-4xl mx-auto prose prose-invert prose-lg max-w-none
+          {(() => {
+            // Split content roughly in half at an <h2> boundary for the mid-article CTA
+            const html = post.content;
+            const h2Indices: number[] = [];
+            const re = /<h2[\s>]/gi;
+            let m: RegExpExecArray | null;
+            while ((m = re.exec(html)) !== null) h2Indices.push(m.index);
+            let splitAt = -1;
+            if (h2Indices.length >= 2) {
+              const target = html.length / 2;
+              splitAt = h2Indices.reduce((best, idx) =>
+                Math.abs(idx - target) < Math.abs(best - target) ? idx : best
+              , h2Indices[0]);
+              // Avoid splitting too early or too late
+              if (splitAt < html.length * 0.25 || splitAt > html.length * 0.8) splitAt = -1;
+            }
+            const firstHalf = splitAt > 0 ? html.slice(0, splitAt) : html;
+            const secondHalf = splitAt > 0 ? html.slice(splitAt) : "";
+
+            const proseClasses = `max-w-4xl mx-auto prose prose-invert prose-lg
               prose-headings:text-foreground prose-headings:font-bold
               prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-5 prose-h2:border-b prose-h2:border-border/30 prose-h2:pb-3
               prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
@@ -204,10 +220,39 @@ const BlogPost = () => {
               [&_.author-note]:bg-muted/30 [&_.author-note]:border [&_.author-note]:border-border/50 [&_.author-note]:rounded-lg [&_.author-note]:p-4 [&_.author-note]:my-8 [&_.author-note]:text-sm
               prose-figure:my-8 prose-figure:rounded-xl prose-figure:overflow-hidden
               prose-img:rounded-xl prose-img:shadow-lg prose-img:border prose-img:border-border/30
-              prose-figcaption:text-center prose-figcaption:text-sm prose-figcaption:mt-3 prose-figcaption:italic"
-            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.content, { USE_PROFILES: { html: true } }) }}
-          />
-          
+              prose-figcaption:text-center prose-figcaption:text-sm prose-figcaption:mt-3 prose-figcaption:italic`;
+
+            return (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <article
+                  className={proseClasses}
+                  dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(firstHalf, { USE_PROFILES: { html: true } }),
+                  }}
+                />
+
+                {secondHalf && (
+                  <div className="max-w-4xl mx-auto">
+                    <MidArticleCTA category={post.category} variant="mid" />
+                  </div>
+                )}
+
+                {secondHalf && (
+                  <article
+                    className={proseClasses}
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(secondHalf, { USE_PROFILES: { html: true } }),
+                    }}
+                  />
+                )}
+              </motion.div>
+            );
+          })()}
+
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
             <div className="max-w-4xl mx-auto mt-8 pt-6 border-t border-border/30">
@@ -221,8 +266,9 @@ const BlogPost = () => {
               </div>
             </div>
           )}
-          
+
           <div className="max-w-4xl mx-auto">
+            <MidArticleCTA category={post.category} variant="final" />
             <BlogCTA />
           </div>
         </div>

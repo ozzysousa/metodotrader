@@ -19,7 +19,7 @@ export interface BlogPost {
   metaDescription: string;
 }
 
-export const AFFILIATE_LINK = "https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue";
+export const AFFILIATE_LINK = "https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenue";
 
 export const SEO_KEYWORDS = [
   "IQ Option",
@@ -3998,7 +3998,7 @@ export const blogPosts: BlogPost[] = [
 <div class="cta-box">
 <h3>🚀 Comece com pouco e evolua no seu ritmo</h3>
 <p>Abra sua conta gratuitamente e teste a plataforma sem compromisso.</p>
-<a href="https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue" target="_blank" rel="noopener" class="cta-button">Criar Conta Grátis na IQ Option</a>
+<a href="https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueafftrack=metodotraderhttps://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueaff_model=revenue" target="_blank" rel="noopener" class="cta-button">Criar Conta Grátis na IQ Option</a>
 </div>
 
 <h2>Por que começar com pouco dinheiro é a estratégia mais inteligente</h2>
@@ -4031,7 +4031,7 @@ export const blogPosts: BlogPost[] = [
 <div class="cta-box">
 <h3>💰 Depósito mínimo a partir de R$ 80 via PIX</h3>
 <p>Teste a plataforma com pouco capital e evolua no seu ritmo.</p>
-<a href="https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue" target="_blank" rel="noopener" class="cta-button">Abrir Conta Agora</a>
+<a href="https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueafftrack=metodotraderhttps://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueaff_model=revenue" target="_blank" rel="noopener" class="cta-button">Abrir Conta Agora</a>
 </div>
 
 <h3>4. Use no máximo 2% da banca por operação</h3>
@@ -4056,7 +4056,7 @@ export const blogPosts: BlogPost[] = [
 <div class="cta-box">
 <h3>🎯 Pronto para começar?</h3>
 <p>Crie sua conta na IQ Option, teste no demo e opere quando se sentir seguro.</p>
-<a href="https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue" target="_blank" rel="noopener" class="cta-button">Começar Grátis</a>
+<a href="https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueafftrack=metodotraderhttps://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueaff_model=revenue" target="_blank" rel="noopener" class="cta-button">Começar Grátis</a>
 </div>
     `,
     author: "Equipe MétodoTrader",
@@ -4083,7 +4083,7 @@ export const blogPosts: BlogPost[] = [
 <div class="cta-box">
 <h3>📈 Teste estes indicadores agora mesmo</h3>
 <p>Abra sua conta demo gratuita e aplique cada setup com saldo virtual.</p>
-<a href="https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue" target="_blank" rel="noopener" class="cta-button">Abrir Conta Demo Grátis</a>
+<a href="https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueafftrack=metodotraderhttps://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueaff_model=revenue" target="_blank" rel="noopener" class="cta-button">Abrir Conta Demo Grátis</a>
 </div>
 
 <h2>Por que indicadores ajudam (e por que não fazem milagre)</h2>
@@ -4117,7 +4117,7 @@ export const blogPosts: BlogPost[] = [
 <div class="cta-box">
 <h3>🎯 Configure os 4 indicadores em 2 minutos</h3>
 <p>A plataforma da IQ Option já vem com todos eles prontos para usar.</p>
-<a href="https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue" target="_blank" rel="noopener" class="cta-button">Acessar a Plataforma</a>
+<a href="https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueafftrack=metodotraderhttps://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueaff_model=revenue" target="_blank" rel="noopener" class="cta-button">Acessar a Plataforma</a>
 </div>
 
 <h2>Como acertar pontos de entrada no trade: combinando indicadores</h2>
@@ -4143,7 +4143,7 @@ export const blogPosts: BlogPost[] = [
 <div class="cta-box">
 <h3>🚀 Coloque os indicadores em prática</h3>
 <p>Conta demo gratuita com $10.000 virtuais para testar tudo agora.</p>
-<a href="https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue" target="_blank" rel="noopener" class="cta-button">Criar Conta Grátis</a>
+<a href="https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueafftrack=metodotraderhttps://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueaff_model=revenue" target="_blank" rel="noopener" class="cta-button">Criar Conta Grátis</a>
 </div>
     `,
     author: "Equipe MétodoTrader",
@@ -4170,7 +4170,7 @@ export const blogPosts: BlogPost[] = [
 <div class="cta-box">
 <h3>✅ Comece pela plataforma mais usada no Brasil</h3>
 <p>Cadastro em 2 minutos, conta demo gratuita e suporte em português.</p>
-<a href="https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue" target="_blank" rel="noopener" class="cta-button">Abrir Conta na IQ Option</a>
+<a href="https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueafftrack=metodotraderhttps://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueaff_model=revenue" target="_blank" rel="noopener" class="cta-button">Abrir Conta na IQ Option</a>
 </div>
 
 <h2>Como escolher corretora de Forex confiável: 7 critérios essenciais</h2>
@@ -4196,7 +4196,7 @@ export const blogPosts: BlogPost[] = [
 <div class="cta-box">
 <h3>⚡ Depósito e saque via PIX em minutos</h3>
 <p>Sem burocracia, sem taxas escondidas. Comece com depósito mínimo acessível.</p>
-<a href="https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue" target="_blank" rel="noopener" class="cta-button">Criar Conta Agora</a>
+<a href="https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueafftrack=metodotraderhttps://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueaff_model=revenue" target="_blank" rel="noopener" class="cta-button">Criar Conta Agora</a>
 </div>
 
 <h2>Comparativo: o que avaliar antes de cadastrar</h2>
@@ -4223,7 +4223,7 @@ export const blogPosts: BlogPost[] = [
 <div class="cta-box">
 <h3>🏆 Vá pela escolha segura</h3>
 <p>Mais de 50 milhões de usuários, suporte em português e saque via PIX.</p>
-<a href="https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue" target="_blank" rel="noopener" class="cta-button">Abrir Conta Grátis</a>
+<a href="https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueafftrack=metodotraderhttps://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueaff_model=revenue" target="_blank" rel="noopener" class="cta-button">Abrir Conta Grátis</a>
 </div>
     `,
     author: "Equipe MétodoTrader",
@@ -4250,7 +4250,7 @@ export const blogPosts: BlogPost[] = [
 <div class="cta-box">
 <h3>🛡️ Aplique o método em ambiente seguro</h3>
 <p>Treine gestão de risco na conta demo gratuita antes de operar com dinheiro real.</p>
-<a href="https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue" target="_blank" rel="noopener" class="cta-button">Abrir Conta Demo Grátis</a>
+<a href="https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueafftrack=metodotraderhttps://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueaff_model=revenue" target="_blank" rel="noopener" class="cta-button">Abrir Conta Demo Grátis</a>
 </div>
 
 <h2>Por que você está perdendo dinheiro no day trade</h2>
@@ -4285,7 +4285,7 @@ export const blogPosts: BlogPost[] = [
 <div class="cta-box">
 <h3>📊 Aplique o sistema na prática</h3>
 <p>Conta demo gratuita com $10.000 virtuais para testar sua planilha sem risco.</p>
-<a href="https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue" target="_blank" rel="noopener" class="cta-button">Acessar Conta Demo</a>
+<a href="https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueafftrack=metodotraderhttps://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueaff_model=revenue" target="_blank" rel="noopener" class="cta-button">Acessar Conta Demo</a>
 </div>
 
 <h2>Controle emocional no Forex: 5 hábitos profissionais</h2>
@@ -4317,7 +4317,7 @@ export const blogPosts: BlogPost[] = [
 <div class="cta-box">
 <h3>🎯 Comece com gestão desde o primeiro dia</h3>
 <p>Treine na conta demo com regras claras antes de operar com dinheiro real.</p>
-<a href="https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue" target="_blank" rel="noopener" class="cta-button">Criar Conta Grátis</a>
+<a href="https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueafftrack=metodotraderhttps://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenueaff_model=revenue" target="_blank" rel="noopener" class="cta-button">Criar Conta Grátis</a>
 </div>
     `,
     author: "Equipe MétodoTrader",

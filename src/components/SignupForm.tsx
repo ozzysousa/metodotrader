@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { ArrowRight, CheckCircle, Mail, User, AlertCircle } from "lucide-react";
 import { z } from "zod";
 
-const AFFILIATE_LINK = "https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenue";
+const AFFILIATE_LINK = "https://iqoption.net/land/start-trading/pt/?aff=1616https://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenueafftrack=metodotraderhttps://iqoption.net/lp/start/en/?aff=1616&afftrack=metodotrader&aff_model=revenueaff_model=revenue";
 
 const signupSchema = z.object({
   name: z.string().trim().min(2, "Nome deve ter pelo menos 2 caracteres").max(100, "Nome muito longo"),

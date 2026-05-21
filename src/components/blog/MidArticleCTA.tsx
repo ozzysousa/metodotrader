@@ -2,58 +2,28 @@ import { ArrowRight, Gift, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AFFILIATE_LINK } from "@/data/blogPosts";
 
-// Animated GIFs (Giphy direct) mapped by topic category
-const GIF_BY_CATEGORY: Record<string, { url: string; alt: string }> = {
-  "Análise Técnica": {
-    url: "https://media.giphy.com/media/l0HlGRDhBjFhfWvgI/giphy.gif",
-    alt: "Gráfico de análise técnica em movimento",
-  },
-  "Análise": {
-    url: "https://media.giphy.com/media/l0HlGRDhBjFhfWvgI/giphy.gif",
-    alt: "Gráfico financeiro em movimento",
-  },
-  "Avançado": {
-    url: "https://media.giphy.com/media/3o7TKuHzpf3hQ4ZK8E/giphy.gif",
-    alt: "Trader profissional analisando o mercado",
-  },
-  "Educacional": {
-    url: "https://media.giphy.com/media/26gsspfbuFTV3rgFW/giphy.gif",
-    alt: "Aprendendo trading",
-  },
-  "Estratégias": {
-    url: "https://media.giphy.com/media/3o7TKuHzpf3hQ4ZK8E/giphy.gif",
-    alt: "Estratégia de trading em ação",
-  },
-  "Gerenciamento": {
-    url: "https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif",
-    alt: "Gerenciamento de capital",
-  },
-  "Gestão de Risco": {
-    url: "https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif",
-    alt: "Gestão de risco financeiro",
-  },
-  "Iniciantes": {
-    url: "https://media.giphy.com/media/JtBZm3Getg3dqxK0zP/giphy.gif",
-    alt: "Primeiros passos no trading",
-  },
-  "Mindset": {
-    url: "https://media.giphy.com/media/26gsspfbuFTV3rgFW/giphy.gif",
-    alt: "Mentalidade vencedora",
-  },
-  "Plataforma": {
-    url: "https://media.giphy.com/media/3o7TKuHzpf3hQ4ZK8E/giphy.gif",
-    alt: "Plataforma de trading",
-  },
-  "Psicologia": {
-    url: "https://media.giphy.com/media/26gsspfbuFTV3rgFW/giphy.gif",
-    alt: "Psicologia do trader",
-  },
+// Lightweight Unsplash images (small, lazy-loaded) mapped by category.
+// Using w=480&q=55&auto=format keeps them under ~50KB on mobile.
+const IMG = (id: string, alt: string) => ({
+  url: `https://images.unsplash.com/${id}?auto=format&fit=crop&w=480&q=55`,
+  alt,
+});
+
+const IMG_BY_CATEGORY: Record<string, { url: string; alt: string }> = {
+  "Análise Técnica": IMG("photo-1611974789855-9c2a0a7236a3", "Gráfico de análise técnica"),
+  "Análise": IMG("photo-1611974789855-9c2a0a7236a3", "Análise de mercado financeiro"),
+  "Avançado": IMG("photo-1642790551116-18e150f248e3", "Trader profissional avançado"),
+  "Educacional": IMG("photo-1554224155-6726b3ff858f", "Estudando o mercado financeiro"),
+  "Estratégias": IMG("photo-1590283603385-17ffb3a7f29f", "Estratégia de trading"),
+  "Gerenciamento": IMG("photo-1579532537598-459ecdaf39cc", "Gestão de capital"),
+  "Gestão de Risco": IMG("photo-1579532537598-459ecdaf39cc", "Gestão de risco financeiro"),
+  "Iniciantes": IMG("photo-1559526324-4b87b5e36e44", "Primeiros passos no trading"),
+  "Mindset": IMG("photo-1506784983877-45594efa4cbe", "Mentalidade vencedora"),
+  "Plataforma": IMG("photo-1642790551116-18e150f248e3", "Plataforma de trading"),
+  "Psicologia": IMG("photo-1506784983877-45594efa4cbe", "Psicologia do trader"),
 };
 
-const DEFAULT_GIF = {
-  url: "https://media.giphy.com/media/l0HlGRDhBjFhfWvgI/giphy.gif",
-  alt: "Mercado financeiro em movimento",
-};
+const DEFAULT_IMG = IMG("photo-1611974789855-9c2a0a7236a3", "Mercado financeiro");
 
 interface MidArticleCTAProps {
   category?: string;
@@ -61,17 +31,20 @@ interface MidArticleCTAProps {
 }
 
 const MidArticleCTA = ({ category, variant = "mid" }: MidArticleCTAProps) => {
-  const gif = (category && GIF_BY_CATEGORY[category]) || DEFAULT_GIF;
+  const img = (category && IMG_BY_CATEGORY[category]) || DEFAULT_IMG;
   const isFinal = variant === "final";
 
   return (
     <div className="my-12 rounded-2xl overflow-hidden border border-primary/30 bg-gradient-to-br from-primary/10 via-cyan-500/5 to-primary/10">
       <div className="grid md:grid-cols-2 items-stretch">
-        <div className="relative min-h-[200px] md:min-h-[260px] overflow-hidden">
+        <div className="relative min-h-[200px] md:min-h-[260px] overflow-hidden bg-card/30">
           <img
-            src={gif.url}
-            alt={gif.alt}
+            src={img.url}
+            alt={img.alt}
             loading="lazy"
+            decoding="async"
+            width={480}
+            height={320}
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/40 md:bg-gradient-to-r md:from-transparent md:to-background/20" />

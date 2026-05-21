@@ -269,7 +269,6 @@ const BlogPost = () => {
 
           <div className="max-w-4xl mx-auto">
             <MidArticleCTA category={post.category} variant="final" />
-            <BlogCTA />
           </div>
         </div>
       </section>
@@ -293,6 +292,9 @@ const BlogPost = () => {
                     <BlogCard post={relatedPost} />
                   </motion.div>
                 ))}
+              </div>
+              <div className="mt-12">
+                <BlogCTA />
               </div>
             </div>
           </div>

@@ -2,10 +2,15 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import { setPageSEO } from "@/lib/seo";
 
 const Cookies = () => {
   useEffect(() => {
-    document.title = "Política de Cookies - Método Trader";
+    setPageSEO({
+      title: "Política de Cookies | MétodoTrader",
+      description: "Saiba como o MétodoTrader utiliza cookies essenciais, de desempenho e de afiliados, e como você pode gerenciar suas preferências em conformidade com a LGPD.",
+      path: "/cookies",
+    });
     window.scrollTo(0, 0);
   }, []);
 

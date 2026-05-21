@@ -2,10 +2,15 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import { setPageSEO } from "@/lib/seo";
 
 const TermosDeUso = () => {
   useEffect(() => {
-    document.title = "Termos de Uso - Método Trader";
+    setPageSEO({
+      title: "Termos de Uso | MétodoTrader",
+      description: "Conheça os Termos de Uso do MétodoTrader: regras de utilização do conteúdo educacional, aviso de risco e responsabilidades do usuário.",
+      path: "/termos-de-uso",
+    });
     window.scrollTo(0, 0);
   }, []);
 

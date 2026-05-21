@@ -2,10 +2,15 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import { setPageSEO } from "@/lib/seo";
 
 const Regulamentacao = () => {
   useEffect(() => {
-    document.title = "Regulamentação - Método Trader";
+    setPageSEO({
+      title: "Regulamentação e Disclaimer | MétodoTrader",
+      description: "Disclaimer, aviso de risco e informações sobre a relação de afiliado do MétodoTrader com a IQ Option. Conteúdo exclusivamente educacional.",
+      path: "/regulamentacao",
+    });
     window.scrollTo(0, 0);
   }, []);
 

@@ -287,7 +287,7 @@ export const blogPosts: BlogPost[] = [
       }
     ],
     tags: ["IQ Option", "Trading para Iniciantes", "Como Começar", "Conta Demo", "Opções Binárias", "Renda Extra", "2026"],
-    metaTitle: "Como Começar na IQ Option do Zero em 2026 | Guia Completo MétodoTrader",
+    metaTitle: "Como Começar na IQ Option do Zero em 2026 | MétodoTrader",
     metaDescription: "Guia completo e atualizado para iniciantes: aprenda a criar sua conta, usar a plataforma e fazer suas primeiras operações na IQ Option com o MétodoTrader."
   },
   {
@@ -541,7 +541,7 @@ export const blogPosts: BlogPost[] = [
     category: "Estratégias",
     image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Suporte e Resistência", "Análise Técnica", "Estratégia de Trading", "Price Action", "Pontos de Entrada", "IQ Option"],
-    metaTitle: "Estratégia de Suporte e Resistência para Trading | MétodoTrader",
+    metaTitle: "Suporte e Resistência: Estratégia Completa | MétodoTrader",
     metaDescription: "Aprenda a identificar níveis de suporte e resistência para melhorar suas operações. Guia completo do MétodoTrader para traders iniciantes e avançados."
   },
   {
@@ -1256,7 +1256,7 @@ export const blogPosts: BlogPost[] = [
     category: "Gerenciamento",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Gerenciamento de Banca", "Gestão de Risco", "Position Sizing", "Planilha de Trading", "Capital", "Regra dos 2%"],
-    metaTitle: "Gerenciamento de Banca para Traders | Planilha e Método MétodoTrader",
+    metaTitle: "Gerenciamento de Banca: Planilha Grátis | MétodoTrader",
     metaDescription: "Aprenda a gerenciar sua banca como um profissional. Planilha e métodos do MétodoTrader para proteger seu capital e maximizar lucros de forma consistente."
   },
   {
@@ -1552,7 +1552,7 @@ export const blogPosts: BlogPost[] = [
     category: "Plataforma",
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["IQ Option", "Segurança", "Pix", "Saques", "Confiável", "Regulamentação", "Brasil", "Depósitos"],
-    metaTitle: "IQ Option é Confiável? Análise Completa + Saques via Pix | MétodoTrader",
+    metaTitle: "IQ Option é Confiável? Saques via Pix | MétodoTrader",
     metaDescription: "Descubra se a IQ Option é confiável e como funcionam os saques via Pix para brasileiros. Análise completa do MétodoTrader sobre segurança e pagamentos."
   },
   {
@@ -2456,7 +2456,7 @@ export const blogPosts: BlogPost[] = [
     category: "Estratégias",
     image: "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Horários de Trading", "Sessões de Mercado", "Forex", "Brasil", "Volatilidade", "Liquidez", "Rotina de Trader"],
-    metaTitle: "Melhores Horários para Operar Opções Binárias no Brasil | MétodoTrader",
+    metaTitle: "Melhores Horários para Operar Opções Binárias | MétodoTrader",
     metaDescription: "Descubra os melhores horários para operar opções binárias no Brasil. Guia completo do MétodoTrader com sessões de mercado e dicas de volatilidade."
   },
   {
@@ -2746,7 +2746,7 @@ export const blogPosts: BlogPost[] = [
     category: "Avançado",
     image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Opções Digitais", "Opções Binárias", "Payout", "IQ Option", "Trading Avançado", "Alavancagem"],
-    metaTitle: "Opções Digitais: Como Alavancar Ganhos na IQ Option | MétodoTrader",
+    metaTitle: "Opções Digitais: Alavancar Ganhos na IQ Option | MétodoTrader",
     metaDescription: "Entenda o que são opções digitais e como usá-las para maximizar lucros com payouts de até 900%. Guia completo do MétodoTrader com estratégias e dicas."
   },
   {
@@ -3118,7 +3118,7 @@ export const blogPosts: BlogPost[] = [
     category: "Análise",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Calendário Econômico", "NFP", "Taxa de Juros", "Indicadores", "Análise Fundamentalista", "Fed", "Selic", "Volatilidade"],
-    metaTitle: "Calendário Econômico para Traders: Guia Completo | MétodoTrader",
+    metaTitle: "Calendário Econômico: Guia para Traders | MétodoTrader",
     metaDescription: "Aprenda a usar o calendário econômico para evitar prejuízos e encontrar oportunidades. Guia completo do MétodoTrader com indicadores e estratégias."
   },
   {
@@ -3317,7 +3317,7 @@ export const blogPosts: BlogPost[] = [
     category: "Análise",
     image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["RSI", "MACD", "Médias Móveis", "Indicadores Técnicos", "Análise Técnica", "EMA", "SMA", "Trading"],
-    metaTitle: "RSI, MACD e Médias Móveis: Guia Completo de Indicadores Técnicos | MétodoTrader",
+    metaTitle: "RSI, MACD e Médias Móveis: Guia Completo | MétodoTrader",
     metaDescription: "Aprenda a usar RSI, MACD e Médias Móveis no trading. Guia prático com configurações, sinais de entrada e estratégias combinadas para a IQ Option."
   },
   {
@@ -3447,7 +3447,7 @@ export const blogPosts: BlogPost[] = [
     category: "Psicologia",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Psicologia de Trading", "Vieses Cognitivos", "Controle Emocional", "Mindset", "FOMO", "Aversão à Perda", "Disciplina"],
-    metaTitle: "Psicologia do Mercado: Vieses Cognitivos que Destroem Traders | MétodoTrader",
+    metaTitle: "Psicologia do Mercado: Vieses Cognitivos | MétodoTrader",
     metaDescription: "Descubra os 7 vieses cognitivos mais perigosos para traders e aprenda técnicas práticas de controle emocional para operar com disciplina e consistência."
   },
   {
@@ -3602,7 +3602,7 @@ export const blogPosts: BlogPost[] = [
     category: "Estratégias",
     image: "https://images.unsplash.com/photo-1535320903710-d993d3d77d29?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Price Action", "Pin Bar", "Engolfo", "Inside Bar", "Análise Técnica", "Trading Avançado", "Pullback", "Fake Breakout"],
-    metaTitle: "Price Action Avançado: Estratégias Profissionais sem Indicadores | MétodoTrader",
+    metaTitle: "Price Action Avançado: Sem Indicadores | MétodoTrader",
     metaDescription: "Aprenda price action avançado: pin bars, engolfos, inside bars e pullbacks. Estratégias profissionais para operar lendo apenas o preço na IQ Option."
   },
   {
@@ -3769,7 +3769,7 @@ export const blogPosts: BlogPost[] = [
     category: "Análise",
     image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Fibonacci", "Retração", "Extensão", "Proporção Áurea", "Análise Técnica", "Take Profit", "Alvos de Preço"],
-    metaTitle: "Fibonacci no Trading: Retração e Extensão | Guia Completo MétodoTrader",
+    metaTitle: "Fibonacci no Trading: Retração e Extensão | MétodoTrader",
     metaDescription: "Aprenda a usar retração e extensão de Fibonacci para encontrar entradas precisas e alvos de preço. Guia completo com exemplos práticos para a IQ Option."
   },
   {
@@ -3980,7 +3980,7 @@ export const blogPosts: BlogPost[] = [
     category: "Estratégias",
     image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Médias Móveis", "EMA", "SMA", "Golden Cross", "Death Cross", "Cruzamento", "Tendência", "Day Trade"],
-    metaTitle: "Estratégia de Médias Móveis: Cruzamentos e Filtros Avançados | MétodoTrader",
+    metaTitle: "Médias Móveis: Cruzamentos e Filtros | MétodoTrader",
     metaDescription: "Domine a estratégia de cruzamento de médias móveis com filtros avançados. Setups profissionais para aumentar sua taxa de acerto na IQ Option."
   },
   {
@@ -4065,7 +4065,7 @@ export const blogPosts: BlogPost[] = [
     category: "Iniciantes",
     image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Depósito Mínimo", "PIX", "Banca Pequena", "Conta Demo", "Iniciantes"],
-    metaTitle: "Corretora de Opções Binárias com Depósito Mínimo Baixo | MétodoTrader",
+    metaTitle: "Corretora de Opções Binárias: Depósito Baixo | MétodoTrader",
     metaDescription: "Aprenda como operar com pouco dinheiro em corretoras com depósito mínimo baixo via PIX. Guia completo com conta demo gratuita e gestão de banca."
   },
   {
@@ -4152,7 +4152,7 @@ export const blogPosts: BlogPost[] = [
     category: "Estratégias",
     image: "https://images.unsplash.com/photo-1640340434855-6084b1f4901c?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Indicadores", "EMA", "RSI", "MACD", "Bollinger", "Tendência", "Análise Técnica"],
-    metaTitle: "Melhores Indicadores para Opções Binárias e Forex | MétodoTrader",
+    metaTitle: "Melhores Indicadores para Opções Binárias | MétodoTrader",
     metaDescription: "Conheça os 4 melhores indicadores para opções binárias e Forex. Aprenda a identificar a tendência e acertar mais pontos de entrada na IQ Option."
   },
   {
@@ -4232,7 +4232,7 @@ export const blogPosts: BlogPost[] = [
     category: "Plataforma",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Plataforma", "Comparativo", "PIX", "Segurança", "Corretora", "Spread"],
-    metaTitle: "Melhor Plataforma para Operar Opções Binárias com Segurança | MétodoTrader",
+    metaTitle: "Melhor Plataforma para Opções Binárias | MétodoTrader",
     metaDescription: "Comparativo completo das melhores plataformas para opções binárias com segurança. Avalie taxas, spreads, PIX rápido e estabilidade antes de cadastrar."
   },
   {
@@ -4326,7 +4326,7 @@ export const blogPosts: BlogPost[] = [
     category: "Gestão de Risco",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=450&h=225&fit=crop&fm=webp&q=80",
     tags: ["Gerenciamento de Risco", "Planilha", "Controle Emocional", "Stop Loss", "Banca", "Mindset"],
-    metaTitle: "Planilha de Gerenciamento de Risco para Opções Binárias Grátis | MétodoTrader",
+    metaTitle: "Planilha de Gerenciamento de Risco Grátis | MétodoTrader",
     metaDescription: "Aprenda gestão de risco profissional com planilha grátis. Pare de perder dinheiro no day trade com metas diárias e controle emocional comprovados."
   }
 ];

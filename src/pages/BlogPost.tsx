@@ -13,6 +13,7 @@ import { getPostBySlug, getRelatedPosts, SEO_KEYWORDS } from "@/data/blogPosts";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
+import { setPageSEO, setJsonLd, removeJsonLd } from "@/lib/seo";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -23,35 +24,37 @@ const BlogPost = () => {
   // Dynamic SEO
   useEffect(() => {
     if (post) {
-      document.title = post.metaTitle;
-      
-      const metaDescription = document.querySelector('meta[name="description"]');
-      if (metaDescription) {
-        metaDescription.setAttribute("content", post.metaDescription);
-      }
+      setPageSEO({
+        title: post.metaTitle,
+        description: post.metaDescription,
+        path: `/blog/${post.slug}`,
+        image: post.image,
+        ogType: "article",
+      });
 
       const metaKeywords = document.querySelector('meta[name="keywords"]');
       if (metaKeywords) {
         metaKeywords.setAttribute("content", SEO_KEYWORDS.join(", "));
       }
 
-      // Open Graph
-      const ogTitle = document.querySelector('meta[property="og:title"]');
-      if (ogTitle) ogTitle.setAttribute("content", post.metaTitle);
-
-      const ogDescription = document.querySelector('meta[property="og:description"]');
-      if (ogDescription) ogDescription.setAttribute("content", post.metaDescription);
-
-      const ogImage = document.querySelector('meta[property="og:image"]');
-      if (ogImage) ogImage.setAttribute("content", post.image);
-
-      // Twitter Card
-      const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-      if (twitterTitle) twitterTitle.setAttribute("content", post.metaTitle);
-
-      const twitterDescription = document.querySelector('meta[name="twitter:description"]');
-      if (twitterDescription) twitterDescription.setAttribute("content", post.metaDescription);
+      setJsonLd("article-jsonld", {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: post.title,
+        description: post.metaDescription,
+        image: post.image,
+        datePublished: post.date,
+        dateModified: post.date,
+        author: { "@type": "Person", name: post.author },
+        publisher: {
+          "@type": "Organization",
+          name: "MétodoTrader",
+          logo: { "@type": "ImageObject", url: "https://metodotrader.online/favicon-512.png" },
+        },
+        mainEntityOfPage: `https://metodotrader.online/blog/${post.slug}`,
+      });
     }
+    return () => removeJsonLd("article-jsonld");
   }, [post]);
 
   // Scroll to top on mount

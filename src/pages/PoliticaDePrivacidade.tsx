@@ -2,10 +2,15 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import { setPageSEO } from "@/lib/seo";
 
 const PoliticaDePrivacidade = () => {
   useEffect(() => {
-    document.title = "Política de Privacidade - Método Trader";
+    setPageSEO({
+      title: "Política de Privacidade | MétodoTrader",
+      description: "Entenda como o MétodoTrader coleta, utiliza e protege seus dados pessoais em conformidade com a LGPD (Lei nº 13.709/2018).",
+      path: "/politica-de-privacidade",
+    });
     window.scrollTo(0, 0);
   }, []);
 

@@ -17,12 +17,12 @@ const Blog = () => {
 
   // Dynamic SEO
   useEffect(() => {
-    document.title = "Blog MétodoTrader | Estratégias de Trading e IQ Option";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Aprenda estratégias de trading, análise técnica e mindset trader. Conteúdo exclusivo do MétodoTrader para operar na IQ Option com sucesso.");
-    }
+    setPageSEO({
+      title: "Blog MétodoTrader | Estratégias e Análise Técnica",
+      description: "Estratégias de trading, análise técnica e mindset trader. Conteúdo exclusivo do MétodoTrader para operar na IQ Option com segurança.",
+      path: "/blog",
+      ogType: "website",
+    });
 
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     if (metaKeywords) {

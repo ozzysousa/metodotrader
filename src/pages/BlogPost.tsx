@@ -63,6 +63,17 @@ const BlogPost = () => {
   }, [slug]);
 
   if (!post) {
+    // Signal soft-404 to crawlers so Google doesn't index a "post não encontrado" page as valid content
+    if (typeof document !== "undefined") {
+      let robots = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+      if (!robots) {
+        robots = document.createElement("meta");
+        robots.name = "robots";
+        document.head.appendChild(robots);
+      }
+      robots.content = "noindex, nofollow";
+      document.title = "Post não encontrado | MétodoTrader";
+    }
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">

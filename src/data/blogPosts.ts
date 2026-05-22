@@ -2157,7 +2157,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 8,
-    slug: "melhores-horarios-operar-opcoes-binarias-brasil",
+    slug: "melhores-horarios-opcoes-binarias",
     title: "Melhores Horários para Operar: Quando o Mercado Oferece as Melhores Oportunidades para Brasileiros",
     excerpt: "Descubra os horários com maior volatilidade, liquidez e melhores oportunidades de trading para quem opera do Brasil. Otimize sua rotina e maximize seus resultados.",
     content: `
@@ -3452,7 +3452,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 13,
-    slug: "price-action-estrategias-avancadas-sem-indicadores",
+    slug: "price-action-sem-indicadores",
     title: "Price Action Avançado: Estratégias Profissionais para Operar Lendo Apenas o Preço",
     excerpt: "Aprenda a técnica preferida dos traders institucionais: operar usando apenas a leitura do preço puro, sem depender de indicadores. Descubra os padrões de price action mais lucrativos.",
     content: `
@@ -3985,7 +3985,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 16,
-    slug: "corretora-opcoes-binarias-deposito-minimo-baixo",
+    slug: "corretora-opcoes-binarias-deposito-baixo",
     title: "Como Operar com Pouco Dinheiro? Guia de Plataformas com Depósito Mínimo Baixo",
     excerpt: "Descubra como começar a operar opções binárias e Forex com pouco dinheiro. Guia completo das corretoras com depósito mínimo baixo via PIX e conta demo gratuita.",
     content: `
@@ -4070,7 +4070,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 17,
-    slug: "melhores-indicadores-opcoes-binarias-forex-tendencia",
+    slug: "melhores-indicadores-opcoes-binarias",
     title: "Melhores Indicadores para Opções Binárias: Como Identificar a Tendência do Gráfico",
     excerpt: "Conheça os melhores indicadores para opções binárias e Forex. Aprenda a identificar a tendência do gráfico e acertar pontos de entrada com mais precisão.",
     content: `
@@ -4157,7 +4157,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 18,
-    slug: "melhor-plataforma-operar-opcoes-binarias-seguranca",
+    slug: "melhor-plataforma-opcoes-binarias",
     title: "Qual a Melhor Plataforma de Trading? Análise Completa e Comparativa para Iniciantes",
     excerpt: "Análise comparativa das melhores plataformas para operar opções binárias com segurança. Compare taxas, spreads, depósito por PIX e saque rápido.",
     content: `
@@ -4237,7 +4237,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 19,
-    slug: "planilha-gerenciamento-risco-opcoes-binarias-gratis",
+    slug: "planilha-gerenciamento-risco",
     title: "Como não Quebrar a Banca: Dicas de Gerenciamento de Risco para Traders Iniciantes",
     excerpt: "Aprenda gestão de risco profissional para opções binárias e Forex. Planilha de gerenciamento, controle emocional e metas diárias para parar de perder dinheiro.",
     content: `

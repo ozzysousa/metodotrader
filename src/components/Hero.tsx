@@ -16,6 +16,8 @@ const Hero = () => {
           muted
           loop
           playsInline
+          preload="none"
+          aria-hidden="true"
           className="w-full h-full object-cover opacity-40"
         >
           <source src={heroVideo} type="video/mp4" />

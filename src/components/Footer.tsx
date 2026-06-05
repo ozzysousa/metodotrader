@@ -2,7 +2,6 @@ import { AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
-import logo from "@/assets/logo-optimized.webp";
 
 const AFFILIATE_LINK = "https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenue";
 
@@ -15,7 +14,37 @@ const Footer = () => {
           <ScrollReveal delay={0}>
             <div className="lg:col-span-1">
               <a href="/#inicio" className="flex items-center gap-2 mb-6">
-                <img src={logo} alt="MétodoTrader Logo" width={40} height={40} className="w-10 h-10 object-contain" />
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-10 h-10"
+                  aria-label="MétodoTrader Logo"
+                >
+                  <defs>
+                    <linearGradient id="mt-grad-footer" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="hsl(160 84% 45%)" />
+                      <stop offset="100%" stopColor="hsl(190 95% 55%)" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="6" y="24" width="5" height="10" rx="1" fill="url(#mt-grad-footer)" opacity="0.7" />
+                  <rect x="13" y="18" width="5" height="16" rx="1" fill="url(#mt-grad-footer)" opacity="0.85" />
+                  <rect x="20" y="12" width="5" height="22" rx="1" fill="url(#mt-grad-footer)" />
+                  <path
+                    d="M5 22 L12 16 L19 11 L27 5"
+                    stroke="hsl(190 95% 55%)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                  />
+                  <path
+                    d="M31 6 L32.4 9.2 L35.8 9.6 L33.2 11.9 L34 15.2 L31 13.5 L28 15.2 L28.8 11.9 L26.2 9.6 L29.6 9.2 Z"
+                    fill="hsl(160 84% 50%)"
+                  />
+                </svg>
                 <span className="text-xl font-bold text-foreground">
                   Método<span className="text-primary">Trader</span>
                 </span>

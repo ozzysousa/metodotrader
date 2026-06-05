@@ -166,7 +166,7 @@ const Footer = () => {
               © {new Date().getFullYear()} MétodoTrader. Todos os direitos reservados.
             </p>
             <div className="flex items-center gap-6">
-              <span className="text-xs text-muted-foreground/60">
+              <span className="text-xs text-muted-foreground">
                 Investimentos envolvem riscos. Negocie com responsabilidade.
               </span>
             </div>

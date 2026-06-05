@@ -102,6 +102,9 @@ const Header = () => {
           <button
             className="lg:hidden text-foreground p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-nav"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

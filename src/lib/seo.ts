@@ -29,6 +29,22 @@ export interface PageSEO {
   ogType?: "website" | "article";
 }
 
+function toAbsoluteUrl(src: string): string {
+  if (/^https?:\/\//i.test(src)) return src;
+  if (src.startsWith("/")) return `${SITE_URL}${src}`;
+  return `${SITE_URL}/${src}`;
+}
+
+// Upgrade Unsplash thumbnails (e.g. w=450&h=225) to social-preview size (1200x630)
+function toSocialImage(src: string): string {
+  if (/images\.unsplash\.com/.test(src)) {
+    return src
+      .replace(/([?&])w=\d+/i, "$1w=1200")
+      .replace(/([?&])h=\d+/i, "$1h=630");
+  }
+  return src;
+}
+
 export function setPageSEO({ title, description, path, image, ogType = "website" }: PageSEO) {
   const url = `${SITE_URL}${path}`;
   document.title = title;
@@ -38,10 +54,21 @@ export function setPageSEO({ title, description, path, image, ogType = "website"
   setMeta('meta[property="og:description"]', "content", description);
   setMeta('meta[property="og:url"]', "content", url);
   setMeta('meta[property="og:type"]', "content", ogType);
-  if (image) setMeta('meta[property="og:image"]', "content", image);
+  setMeta('meta[property="og:site_name"]', "content", "MétodoTrader");
+  setMeta('meta[name="twitter:card"]', "content", "summary_large_image");
   setMeta('meta[name="twitter:title"]', "content", title);
   setMeta('meta[name="twitter:description"]', "content", description);
-  if (image) setMeta('meta[name="twitter:image"]', "content", image);
+  if (image) {
+    const absolute = toSocialImage(toAbsoluteUrl(image));
+    setMeta('meta[property="og:image"]', "content", absolute);
+    setMeta('meta[property="og:image:secure_url"]', "content", absolute);
+    setMeta('meta[property="og:image:type"]', "content", absolute.endsWith(".png") ? "image/png" : "image/jpeg");
+    setMeta('meta[property="og:image:width"]', "content", "1200");
+    setMeta('meta[property="og:image:height"]', "content", "630");
+    setMeta('meta[property="og:image:alt"]', "content", title);
+    setMeta('meta[name="twitter:image"]', "content", absolute);
+    setMeta('meta[name="twitter:image:alt"]', "content", title);
+  }
 }
 
 export function setJsonLd(id: string, data: object) {

@@ -8,7 +8,22 @@ import { useEffect, useRef, useState } from "react";
 const AFFILIATE_LINK = "https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenue";
 
 const Hero = () => {
-  return (
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    // Defer video mount until after first paint to protect LCP
+    const id = window.requestIdleCallback
+      ? window.requestIdleCallback(() => setShowVideo(true))
+      : window.setTimeout(() => setShowVideo(true), 1200);
+    return () => {
+      if (window.cancelIdleCallback && typeof id === "number") {
+        try { window.cancelIdleCallback(id); } catch {}
+      } else {
+        clearTimeout(id as number);
+      }
+    };
+  }, []);
+
     <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">

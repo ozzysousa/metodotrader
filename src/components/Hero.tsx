@@ -3,6 +3,7 @@ import { TrendingUp, Shield, Clock } from "lucide-react";
 import TradingChart from "@/components/TradingChart";
 import ScrollReveal from "@/components/ScrollReveal";
 import heroVideo from "@/assets/hero-video.mp4";
+import { useEffect, useRef, useState } from "react";
 
 const AFFILIATE_LINK = "https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenue";
 

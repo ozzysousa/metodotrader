@@ -24,20 +24,23 @@ const Hero = () => {
     };
   }, []);
 
+  return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      {/* Video Background */}
+      {/* Video Background (deferred to protect LCP) */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          aria-hidden="true"
-          className="w-full h-full object-cover opacity-40"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+        {showVideo && (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="none"
+            aria-hidden="true"
+            className="w-full h-full object-cover opacity-40"
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
       </div>
       {/* Animated Trading Chart Background */}

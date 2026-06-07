@@ -15,13 +15,16 @@ const indexPath = resolve(root, "index.html");
 if (!existsSync(indexPath)) err("index.html not found");
 else {
   const html = readFileSync(indexPath, "utf8");
+  // Canonical and og:url are intentionally NOT hardcoded in index.html.
+  // setPageSEO (src/lib/seo.ts) injects per-route canonical/og:url at runtime
+  // so each route gets its own URL for JS-executing crawlers.
   const canon = html.match(/<link[^>]+rel=["']canonical["'][^>]*href=["']([^"']+)["']/i);
-  if (!canon) err("index.html: missing <link rel=canonical>");
-  else if (!canon[1].startsWith(SITE_URL)) err(`index.html: canonical must start with ${SITE_URL} (got ${canon[1]})`);
-
+  if (canon && !canon[1].startsWith(SITE_URL))
+    err(`index.html: canonical (if present) must start with ${SITE_URL} (got ${canon[1]})`);
   const ogUrl = html.match(/property=["']og:url["'][^>]*content=["']([^"']+)["']/i);
-  if (!ogUrl) err("index.html: missing og:url");
-  else if (!ogUrl[1].startsWith(SITE_URL)) err(`index.html: og:url must start with ${SITE_URL}`);
+  if (ogUrl && !ogUrl[1].startsWith(SITE_URL))
+    err(`index.html: og:url (if present) must start with ${SITE_URL}`);
+
 
   if (!/name=["']description["']/i.test(html)) err("index.html: missing meta description");
   const titleMatch = html.match(/<title>([^<]*)<\/title>/i);

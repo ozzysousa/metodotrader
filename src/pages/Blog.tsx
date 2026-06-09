@@ -109,8 +109,11 @@ const Blog = () => {
       </section>
 
       {/* Posts Grid */}
-      <section className="pb-20">
+      <section className="pb-20" aria-labelledby="blog-articles-heading">
         <div className="container mx-auto px-4 lg:px-8">
+          <h2 id="blog-articles-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
+            {selectedCategory ? `Artigos sobre ${selectedCategory}` : "Últimos artigos e estratégias"}
+          </h2>
           {filteredPosts.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post, index) => (

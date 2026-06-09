@@ -44,8 +44,8 @@ const BlogCard = ({ post }: BlogCardProps) => {
           <p className="text-muted-foreground line-clamp-3 mb-4">
             {post.excerpt}
           </p>
-          <div className="flex items-center text-primary font-semibold group-hover:gap-2 transition-all">
-            Ler mais
+          <div className="flex items-center text-primary font-semibold group-hover:gap-2 transition-all" aria-label={`Ler artigo completo: ${post.title}`}>
+            Ler artigo completo
             <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
           </div>
         </CardContent>

@@ -206,12 +206,12 @@ const BlogPost = () => {
             const secondHalf = splitAt > 0 ? html.slice(splitAt) : "";
 
             const proseClasses = `max-w-4xl mx-auto prose prose-invert prose-lg
-              prose-headings:text-foreground prose-headings:font-bold
-              prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-5 prose-h2:border-b prose-h2:border-border/30 prose-h2:pb-3
-              prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
-              prose-h4:text-lg prose-h4:mt-6 prose-h4:mb-3
-              prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-4 prose-p:text-justify
-              prose-li:text-muted-foreground prose-li:mb-2
+              prose-headings:text-foreground prose-headings:font-bold prose-headings:tracking-tight
+              prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-5 prose-h2:border-b prose-h2:border-border/30 prose-h2:pb-3 prose-h2:leading-snug
+              prose-h3:text-xl md:prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4 prose-h3:leading-snug
+              prose-h4:text-lg prose-h4:mt-8 prose-h4:mb-3
+              prose-p:text-muted-foreground prose-p:leading-loose prose-p:mb-7 prose-p:text-justify
+              prose-li:text-muted-foreground prose-li:mb-3 prose-li:leading-relaxed
               prose-strong:text-foreground prose-strong:font-semibold
               prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-a:font-medium
               prose-code:text-primary prose-code:bg-primary/10 prose-code:px-2 prose-code:py-1 prose-code:rounded

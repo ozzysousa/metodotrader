@@ -220,8 +220,8 @@ const BlogPost = () => {
               prose-table:border-border/50
               prose-th:text-foreground prose-th:bg-card/50 prose-th:p-3 prose-th:text-left
               prose-td:text-muted-foreground prose-td:border-border/30 prose-td:p-3
-              prose-ul:my-4 prose-ol:my-4
-              [&_.lead]:text-lg [&_.lead]:text-muted-foreground [&_.lead]:leading-relaxed
+              prose-ul:my-6 prose-ol:my-6 prose-ul:space-y-2 prose-ol:space-y-2
+              [&_.lead]:text-lg [&_.lead]:text-muted-foreground [&_.lead]:leading-loose [&_.lead]:mb-8
               [&_.highlight-box]:bg-primary/10 [&_.highlight-box]:border-l-4 [&_.highlight-box]:border-primary [&_.highlight-box]:p-4 [&_.highlight-box]:rounded-r-lg [&_.highlight-box]:my-6
               [&_.warning-box]:bg-destructive/10 [&_.warning-box]:border-l-4 [&_.warning-box]:border-destructive [&_.warning-box]:p-4 [&_.warning-box]:rounded-r-lg [&_.warning-box]:my-6
               [&_.pro-tip]:bg-cyan-500/10 [&_.pro-tip]:border-l-4 [&_.pro-tip]:border-cyan-500 [&_.pro-tip]:p-4 [&_.pro-tip]:rounded-r-lg [&_.pro-tip]:my-6

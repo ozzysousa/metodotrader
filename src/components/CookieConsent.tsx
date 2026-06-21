@@ -21,11 +21,13 @@ const CookieConsent = () => {
 
   const handleAccept = () => {
     localStorage.setItem(COOKIE_CONSENT_KEY, "accepted");
+    window.dispatchEvent(new Event("cookie-consent-change"));
     setShowBanner(false);
   };
 
   const handleDecline = () => {
     localStorage.setItem(COOKIE_CONSENT_KEY, "declined");
+    window.dispatchEvent(new Event("cookie-consent-change"));
     setShowBanner(false);
   };
 
@@ -65,8 +67,8 @@ const CookieConsent = () => {
                     Sua privacidade é importante
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Utilizamos cookies para melhorar sua experiência de navegação, personalizar conteúdo e analisar nosso tráfego. 
-                    Ao clicar em "Aceitar", você concorda com o uso de cookies conforme descrito em nossa{" "}
+                    Utilizamos cookies para melhorar sua experiência de navegação, personalizar conteúdo, exibir anúncios do Google AdSense e analisar nosso tráfego.
+                    Ao clicar em "Aceitar", você autoriza o uso de cookies de publicidade personalizada conforme descrito em nossa{" "}
                     <Link 
                       to="/cookies" 
                       className="text-primary hover:underline font-medium"

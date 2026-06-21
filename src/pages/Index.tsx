@@ -9,6 +9,7 @@ import FAQ from "@/components/FAQ";
 import SignupForm from "@/components/SignupForm";
 import Footer from "@/components/Footer";
 import BlogCTA from "@/components/blog/BlogCTA";
+import AdSlot from "@/components/AdSlot";
 import { setPageSEO, setJsonLd, removeJsonLd } from "@/lib/seo";
 
 const Index = () => {
@@ -38,8 +39,14 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <div className="container mx-auto px-4 lg:px-8">
+          <AdSlot slot="1111111111" />
+        </div>
         <Assets />
         <Benefits />
+        <div className="container mx-auto px-4 lg:px-8">
+          <AdSlot slot="2222222222" />
+        </div>
         <RecentArticles />
         <Testimonials />
         <div className="container mx-auto px-4 lg:px-8">
@@ -48,6 +55,7 @@ const Index = () => {
         <FAQ />
         <div className="container mx-auto px-4 lg:px-8">
           <BlogCTA />
+          <AdSlot slot="3333333333" />
         </div>
         <SignupForm />
       </main>

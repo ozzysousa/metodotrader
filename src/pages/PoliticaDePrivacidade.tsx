@@ -1,18 +1,37 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { setPageSEO } from "@/lib/seo";
 
 const PoliticaDePrivacidade = () => {
+  const location = useLocation();
+
   useEffect(() => {
     setPageSEO({
       title: "Política de Privacidade | MétodoTrader",
       description: "Entenda como o MétodoTrader coleta, utiliza e protege seus dados pessoais em conformidade com a LGPD (Lei nº 13.709/2018).",
       path: "/politica-de-privacidade",
     });
-    window.scrollTo(0, 0);
-  }, []);
+    if (!location.hash) window.scrollTo(0, 0);
+  }, [location.hash]);
+
+  // Smooth scroll to hash target (e.g. #google-adsense) on any device.
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.replace("#", "");
+    // Wait one frame so the section is mounted before scrolling.
+    const t = window.setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY - 96; // offset for fixed header
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }, 100);
+    return () => window.clearTimeout(t);
+  }, [location.hash, location.pathname]);
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -111,7 +130,7 @@ const PoliticaDePrivacidade = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.32}>
-            <section className="mb-12">
+            <section id="google-adsense" className="mb-12 scroll-mt-24">
               <h2 className="text-2xl font-bold text-foreground mb-4">5.1 Google AdSense e Publicidade Personalizada</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 Este site utiliza o <strong>Google AdSense</strong>, serviço de anúncios fornecido pelo Google LLC.

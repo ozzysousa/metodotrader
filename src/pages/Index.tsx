@@ -39,14 +39,10 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <div className="container mx-auto px-4 lg:px-8">
-          <AdSlot slot="1111111111" />
-        </div>
+        <AdSlot slotId="homeHeader" placement="header" />
         <Assets />
         <Benefits />
-        <div className="container mx-auto px-4 lg:px-8">
-          <AdSlot slot="2222222222" />
-        </div>
+        <AdSlot slotId="homeMid" placement="inline" />
         <RecentArticles />
         <Testimonials />
         <div className="container mx-auto px-4 lg:px-8">
@@ -55,8 +51,8 @@ const Index = () => {
         <FAQ />
         <div className="container mx-auto px-4 lg:px-8">
           <BlogCTA />
-          <AdSlot slot="3333333333" />
         </div>
+        <AdSlot slotId="homeFooter" placement="footer" />
         <SignupForm />
       </main>
       <Footer />

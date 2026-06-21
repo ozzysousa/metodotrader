@@ -105,6 +105,14 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link
+                    to="/politica-de-privacidade#google-adsense"
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  >
+                    Google AdSense & Cookies
+                  </Link>
+                </li>
+                <li>
                   <Link to="/cookies" className="text-muted-foreground hover:text-primary transition-colors">
                     Cookies
                   </Link>

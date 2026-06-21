@@ -9,6 +9,7 @@ import BlogCard from "@/components/blog/BlogCard";
 import BlogCTA from "@/components/blog/BlogCTA";
 import FloatingCTA from "@/components/blog/FloatingCTA";
 import MidArticleCTA from "@/components/blog/MidArticleCTA";
+import AdSlot from "@/components/AdSlot";
 import { getPostBySlug, getRelatedPosts, SEO_KEYWORDS } from "@/data/blogPosts";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -242,6 +243,10 @@ const BlogPost = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
+                <div className="max-w-4xl mx-auto">
+                  <AdSlot slot="4444444444" />
+                </div>
+
                 <article
                   className={proseClasses}
                   dangerouslySetInnerHTML={{
@@ -252,6 +257,7 @@ const BlogPost = () => {
                 {secondHalf && (
                   <div className="max-w-4xl mx-auto">
                     <MidArticleCTA category={post.category} variant="mid" />
+                    <AdSlot slot="5555555555" />
                   </div>
                 )}
 
@@ -283,6 +289,7 @@ const BlogPost = () => {
 
           <div className="max-w-4xl mx-auto">
             <MidArticleCTA category={post.category} variant="final" />
+            <AdSlot slot="6666666666" />
           </div>
         </div>
       </section>

@@ -101,10 +101,33 @@ const PoliticaDePrivacidade = () => {
               <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4">
                 <li>Plataformas parceiras de trading (IQ Option) para fins de cadastro via links de afiliados</li>
                 <li>Ferramentas de análise (Google Analytics) para melhoria do site</li>
+                <li>Google AdSense, para exibição de anúncios relevantes e mensuração de desempenho publicitário</li>
                 <li>Autoridades competentes, quando exigido por lei</li>
               </ul>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Não vendemos, alugamos ou negociamos suas informações pessoais com terceiros para fins comerciais não relacionados aos nossos serviços.
+              </p>
+            </section>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.32}>
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold text-foreground mb-4">5.1 Google AdSense e Publicidade Personalizada</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Este site utiliza o <strong>Google AdSense</strong>, serviço de anúncios fornecido pelo Google LLC.
+                O Google e seus parceiros podem utilizar cookies (incluindo o cookie DoubleClick / DART) e identificadores
+                de dispositivo para veicular anúncios com base em visitas anteriores a este e a outros sites na Internet,
+                permitindo a exibição de publicidade personalizada.
+              </p>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2 ml-4 mb-4">
+                <li>Os anúncios são carregados apenas após o seu consentimento no banner de cookies, em conformidade com a LGPD.</li>
+                <li>Você pode desativar a publicidade personalizada do Google a qualquer momento em <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">google.com/settings/ads</a>.</li>
+                <li>Para mais informações sobre como o Google utiliza dados, acesse <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">políticas do Google para sites parceiros</a>.</li>
+                <li>Você também pode gerenciar cookies de terceiros em <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">aboutads.info/choices</a>.</li>
+              </ul>
+              <p className="text-muted-foreground leading-relaxed">
+                Caso opte por recusar os cookies, anúncios não personalizados poderão ainda ser exibidos com base em
+                contexto da página, sem uso de dados de comportamento.
               </p>
             </section>
           </ScrollReveal>

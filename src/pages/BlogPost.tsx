@@ -244,7 +244,7 @@ const BlogPost = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
                 <div className="max-w-4xl mx-auto">
-                  <AdSlot slot="4444444444" />
+                  <AdSlot slotId="articleTop" placement="article" />
                 </div>
 
                 <article
@@ -257,7 +257,7 @@ const BlogPost = () => {
                 {secondHalf && (
                   <div className="max-w-4xl mx-auto">
                     <MidArticleCTA category={post.category} variant="mid" />
-                    <AdSlot slot="5555555555" />
+                    <AdSlot slotId="articleInline" placement="article" />
                   </div>
                 )}
 
@@ -289,10 +289,11 @@ const BlogPost = () => {
 
           <div className="max-w-4xl mx-auto">
             <MidArticleCTA category={post.category} variant="final" />
-            <AdSlot slot="6666666666" />
+            <AdSlot slotId="articleEnd" placement="article" />
           </div>
         </div>
       </section>
+
 
       {/* Related Posts */}
       {relatedPosts.length > 0 && (

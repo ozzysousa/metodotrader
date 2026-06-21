@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Cookie, X, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { loadAdSenseScript } from "@/lib/adsense";
 
 const COOKIE_CONSENT_KEY = "metodotrader-cookie-consent";
 
@@ -10,10 +11,12 @@ const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    // Check if user has already consented
     const hasConsented = localStorage.getItem(COOKIE_CONSENT_KEY);
+    if (hasConsented === "accepted") {
+      // Restore AdSense on returning visits who already accepted.
+      loadAdSenseScript();
+    }
     if (!hasConsented) {
-      // Show banner after a short delay for better UX
       const timer = setTimeout(() => setShowBanner(true), 1500);
       return () => clearTimeout(timer);
     }
@@ -21,6 +24,7 @@ const CookieConsent = () => {
 
   const handleAccept = () => {
     localStorage.setItem(COOKIE_CONSENT_KEY, "accepted");
+    loadAdSenseScript();
     window.dispatchEvent(new Event("cookie-consent-change"));
     setShowBanner(false);
   };
@@ -30,6 +34,7 @@ const CookieConsent = () => {
     window.dispatchEvent(new Event("cookie-consent-change"));
     setShowBanner(false);
   };
+
 
   return (
     <AnimatePresence>

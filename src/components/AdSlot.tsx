@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { ADSENSE_CLIENT, AD_SLOTS, loadAdSenseScript, type AdSlotId } from "@/lib/adsense";
 
 declare global {
   interface Window {
@@ -7,35 +8,46 @@ declare global {
 }
 
 const COOKIE_CONSENT_KEY = "metodotrader-cookie-consent";
-const ADSENSE_CLIENT = "ca-pub-2486849619385192";
+
+type Placement = "header" | "inline" | "footer" | "article";
 
 interface AdSlotProps {
-  /** AdSense ad slot ID (configure in your AdSense dashboard). */
-  slot: string;
-  /** Layout format. Default: auto responsive. */
+  /** Pre-configured slot key from src/lib/adsense.ts (preferred). */
+  slotId?: AdSlotId;
+  /** Raw AdSense slot ID. Used if slotId is omitted. */
+  slot?: string;
+  /** Visual placement preset that controls max-width and spacing. */
+  placement?: Placement;
   format?: string;
-  /** Full width responsive. Default true. */
   fullWidthResponsive?: boolean;
-  /** Optional CSS class for the wrapper. */
   className?: string;
-  /** Optional inline style override for the <ins> tag. */
   style?: React.CSSProperties;
-  /** Optional label shown above the ad. */
   label?: string;
 }
 
+const placementClasses: Record<Placement, string> = {
+  header: "max-w-3xl mx-auto my-6 md:my-8 min-h-[100px]",
+  inline: "max-w-3xl mx-auto my-8 md:my-10 min-h-[120px]",
+  footer: "max-w-3xl mx-auto mt-8 mb-4 min-h-[100px]",
+  article: "max-w-2xl mx-auto my-8 min-h-[120px]",
+};
+
 /**
  * Google AdSense ad slot.
- * Only renders after the user has accepted cookies (LGPD/GDPR friendly).
+ * - Only renders + loads the adsbygoogle script after the user accepts cookies (LGPD/GDPR).
+ * - Uses semantic tokens and a subtle "Publicidade" label so ads blend with the dark theme.
  */
 const AdSlot = ({
+  slotId,
   slot,
+  placement = "inline",
   format = "auto",
   fullWidthResponsive = true,
   className = "",
   style,
   label = "Publicidade",
 }: AdSlotProps) => {
+  const resolvedSlot = slot ?? (slotId ? AD_SLOTS[slotId] : undefined);
   const insRef = useRef<HTMLModElement | null>(null);
   const pushedRef = useRef(false);
   const [consented, setConsented] = useState<boolean>(() => {
@@ -56,35 +68,40 @@ const AdSlot = ({
   }, []);
 
   useEffect(() => {
-    if (!consented || pushedRef.current || !insRef.current) return;
+    if (!consented || pushedRef.current || !insRef.current || !resolvedSlot) return;
+    loadAdSenseScript();
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
       pushedRef.current = true;
     } catch (e) {
-      // AdSense not yet loaded; will retry on next mount
       console.warn("AdSense push failed", e);
     }
-  }, [consented]);
+  }, [consented, resolvedSlot]);
 
-  if (!consented) return null;
+  if (!consented || !resolvedSlot) return null;
 
   return (
-    <div className={`my-8 w-full text-center ${className}`}>
+    <aside
+      aria-label="Anúncio patrocinado"
+      className={`w-full px-4 ${placementClasses[placement]} ${className}`}
+    >
       {label && (
-        <div className="text-[11px] uppercase tracking-widest text-muted-foreground/60 mb-2">
+        <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground/50 mb-2 text-center">
           {label}
         </div>
       )}
-      <ins
-        ref={insRef}
-        className="adsbygoogle"
-        style={style ?? { display: "block" }}
-        data-ad-client={ADSENSE_CLIENT}
-        data-ad-slot={slot}
-        data-ad-format={format}
-        data-full-width-responsive={fullWidthResponsive ? "true" : "false"}
-      />
-    </div>
+      <div className="rounded-xl border border-border/30 bg-card/30 backdrop-blur-sm p-2 overflow-hidden">
+        <ins
+          ref={insRef}
+          className="adsbygoogle"
+          style={style ?? { display: "block", minHeight: 90 }}
+          data-ad-client={ADSENSE_CLIENT}
+          data-ad-slot={resolvedSlot}
+          data-ad-format={format}
+          data-full-width-responsive={fullWidthResponsive ? "true" : "false"}
+        />
+      </div>
+    </aside>
   );
 };
 

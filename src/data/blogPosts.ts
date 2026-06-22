@@ -4839,7 +4839,7 @@ export const blogPosts: BlogPost[] = [
 <p>Treine o padrão com $10.000 virtuais antes de arriscar capital real.</p>
 <a href="https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenue" target="_blank" rel="noopener" class="cta-button">Abrir Conta Demo Grátis</a>
 </div>
-    \`,
+    `,
     author: "Equipe MétodoTrader",
     date: "2026-06-18",
     readTime: "9 min",
@@ -4941,7 +4941,7 @@ export const blogPosts: BlogPost[] = [
 <p>Abra sua conta na IQ Option e teste o setup com $10.000 em conta demo.</p>
 <a href="https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenue" target="_blank" rel="noopener" class="cta-button">Criar Conta Grátis</a>
 </div>
-    \`,
+    `,
     author: "Equipe MétodoTrader",
     date: "2026-06-19",
     readTime: "10 min",
@@ -5041,7 +5041,7 @@ export const blogPosts: BlogPost[] = [
 <p>Pratique sua rotina anti-overtrading em conta demo da IQ Option.</p>
 <a href="https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenue" target="_blank" rel="noopener" class="cta-button">Abrir Conta Demo</a>
 </div>
-    \`,
+    `,
     author: "Equipe MétodoTrader",
     date: "2026-06-20",
     readTime: "11 min",
@@ -5162,7 +5162,7 @@ export const blogPosts: BlogPost[] = [
 <p>Abra sua conta na IQ Option e teste ambos os mercados em conta demo gratuita.</p>
 <a href="https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenue" target="_blank" rel="noopener" class="cta-button">Criar Conta Grátis</a>
 </div>
-    \`,
+    `,
     author: "Equipe MétodoTrader",
     date: "2026-06-21",
     readTime: "12 min",

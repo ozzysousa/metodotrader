@@ -18,6 +18,24 @@
     <meta name="author" content="MétodoTrader" />
     <meta name="keywords" content="opções binárias, criptomoedas, bitcoin, ethereum, trading, investimento, IQ Option">
 
+    <!-- Canonical aponta para o domínio oficial (.online). Per-route canonicals são setados em src/lib/seo.ts. -->
+    <link rel="canonical" href="https://metodotrader.online/" />
+
+    <!-- Bloqueia indexação em domínios de preview/staging (.lovable.app). Apenas metodotrader.online é indexável. -->
+    <script>
+      (function () {
+        try {
+          var host = window.location.hostname;
+          if (host && host.indexOf("metodotrader.online") === -1) {
+            var m = document.createElement("meta");
+            m.name = "robots";
+            m.content = "noindex, nofollow";
+            document.head.appendChild(m);
+          }
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- Google AdSense (verification meta — script é carregado dinamicamente após consentimento de cookies em src/components/AdSlot.tsx) -->
     <meta name="google-adsense-account" content="ca-pub-2486849619385192" />
 

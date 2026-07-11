@@ -192,7 +192,7 @@ const BlogPost = () => {
             const firstHalf = splitAt > 0 ? html.slice(0, splitAt) : html;
             const secondHalf = splitAt > 0 ? html.slice(splitAt) : "";
 
-            const proseClasses = `max-w-4xl mx-auto prose prose-invert prose-lg
+            const proseClasses = `max-w-[720px] mx-auto prose prose-invert prose-lg
               prose-headings:text-foreground prose-headings:font-bold prose-headings:tracking-tight
               prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-5 prose-h2:border-b prose-h2:border-border/30 prose-h2:pb-3 prose-h2:leading-snug
               prose-h3:text-xl md:prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4 prose-h3:leading-snug
@@ -229,7 +229,7 @@ const BlogPost = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-[720px] mx-auto">
                   <AdSlot slotId="articleTop" placement="article" />
                 </div>
 
@@ -241,7 +241,7 @@ const BlogPost = () => {
                 />
 
                 {secondHalf && (
-                  <div className="max-w-4xl mx-auto">
+                  <div className="max-w-[720px] mx-auto">
                     <MidArticleCTA category={post.category} variant="mid" />
                     <AdSlot slotId="articleInline" placement="article" />
                   </div>
@@ -261,7 +261,7 @@ const BlogPost = () => {
 
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
-            <div className="max-w-4xl mx-auto mt-8 pt-6 border-t border-border/30">
+            <div className="max-w-[720px] mx-auto mt-8 pt-6 border-t border-border/30">
               <h4 className="text-sm font-semibold text-muted-foreground mb-3">Tags:</h4>
               <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
@@ -273,7 +273,7 @@ const BlogPost = () => {
             </div>
           )}
 
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-[720px] mx-auto">
             <MidArticleCTA category={post.category} variant="final" />
             <AdSlot slotId="articleEnd" placement="article" />
           </div>

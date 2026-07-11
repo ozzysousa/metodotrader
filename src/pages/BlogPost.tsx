@@ -89,24 +89,14 @@ const BlogPost = () => {
     );
   }
 
-  const handleShare = async () => {
-    try {
-      await navigator.share({
-        title: post.title,
-        text: post.excerpt,
-        url: window.location.href,
-      });
-    } catch {
-      // Fallback: copy to clipboard
-      navigator.clipboard.writeText(window.location.href);
-      toast.success("Link copiado para a área de transferência!");
-    }
-  };
+  const shareUrl = typeof window !== "undefined"
+    ? window.location.href
+    : `https://metodotrader.online/blog/${post.slug}`;
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
@@ -115,7 +105,7 @@ const BlogPost = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-[720px] mx-auto"
           >
             <Link
               to="/blog"
@@ -124,41 +114,33 @@ const BlogPost = () => {
               <ArrowLeft className="w-4 h-4" />
               Voltar para o Blog
             </Link>
-            
+
             <Badge className="mb-4 bg-primary/90 text-primary-foreground">
               {post.category}
             </Badge>
-            
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5 leading-tight">
               {post.title}
             </h1>
-            
-            <div className="flex flex-wrap items-center gap-6 text-muted-foreground mb-8">
-              <span className="flex items-center gap-2">
-                <User className="w-5 h-5" />
+
+            {/* Author meta line */}
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground pb-2 border-b border-border/40">
+              <span className="flex items-center gap-1.5">
+                <User className="w-4 h-4" />
                 {post.author}
               </span>
-              <span className="flex items-center gap-2">
-                <Calendar className="w-5 h-5" />
+              <span className="flex items-center gap-1.5">
+                <Calendar className="w-4 h-4" />
                 {new Date(post.date).toLocaleDateString('pt-BR', {
                   day: '2-digit',
                   month: 'long',
                   year: 'numeric'
                 })}
               </span>
-              <span className="flex items-center gap-2">
-                <Clock className="w-5 h-5" />
-                {post.readTime} de leitura
+              <span className="flex items-center gap-1.5">
+                <Clock className="w-4 h-4" />
+                ⏱️ Leitura de {post.readTime}
               </span>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={handleShare}
-                className="text-primary hover:text-primary/80"
-              >
-                <Share2 className="w-5 h-5 mr-2" />
-                Compartilhar
-              </Button>
             </div>
           </motion.div>
         </div>

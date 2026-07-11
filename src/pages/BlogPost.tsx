@@ -276,6 +276,7 @@ const BlogPost = () => {
           <div className="max-w-[720px] mx-auto">
             <MidArticleCTA category={post.category} variant="final" />
             <AdSlot slotId="articleEnd" placement="article" />
+            <ShareBar url={shareUrl} title={post.title} variant="inline" />
           </div>
         </div>
       </section>

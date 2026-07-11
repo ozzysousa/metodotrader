@@ -146,14 +146,14 @@ const BlogPost = () => {
         </div>
       </section>
 
-      {/* Featured Image */}
-      <section className="pb-12">
+      {/* Featured Image + Audio + Share */}
+      <section className="pb-8">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-[720px] mx-auto"
           >
             <div className="relative rounded-2xl overflow-hidden aspect-video">
               <img
@@ -163,6 +163,9 @@ const BlogPost = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
             </div>
+
+            <ArticleAudioPlayer readTime={post.readTime} title={post.title} />
+            <ShareBar url={shareUrl} title={post.title} variant="inline" />
           </motion.div>
         </div>
       </section>

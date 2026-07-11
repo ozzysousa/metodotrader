@@ -15,8 +15,8 @@ import { setPageSEO, setJsonLd, removeJsonLd } from "@/lib/seo";
 const Index = () => {
   useEffect(() => {
     setPageSEO({
-      title: "Método Trader 2026 | Estratégias e Análise de Mercado",
-      description: "Domine o mercado com o Método Trader 2026. Estratégias validadas para Opções Binárias e Criptomoedas, com análise de dados e segurança.",
+      title: "Método Trader | Estratégias, Gerenciamento e Análise de Mercado",
+      description: "Aprenda as melhores estratégias de trading no portal Método Trader. Conteúdo educativo sobre opções binárias, análise de mercado e foco em consistência.",
       path: "/",
       ogType: "website",
     });

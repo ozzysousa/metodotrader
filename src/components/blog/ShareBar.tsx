@@ -1,4 +1,4 @@
-import { Link2, Facebook, Twitter, Send } from "lucide-react";
+import { Link2, Facebook, Twitter } from "lucide-react";
 import { toast } from "sonner";
 
 interface ShareBarProps {

@@ -17,6 +17,7 @@ const PAGE_SIZE = 9;
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
 
   // Dynamic SEO
   useEffect(() => {
@@ -35,12 +36,35 @@ const Blog = () => {
 
   const categories = [...new Set(blogPosts.map(post => post.category))];
 
-  const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = !selectedCategory || post.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const filteredPosts = useMemo(
+    () =>
+      blogPosts.filter((post) => {
+        const term = searchTerm.toLowerCase();
+        const matchesSearch =
+          post.title.toLowerCase().includes(term) ||
+          post.excerpt.toLowerCase().includes(term);
+        const matchesCategory = !selectedCategory || post.category === selectedCategory;
+        return matchesSearch && matchesCategory;
+      }),
+    [searchTerm, selectedCategory]
+  );
+
+  // Reset to first page when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedCategory]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredPosts.length / PAGE_SIZE));
+  const safePage = Math.min(currentPage, totalPages);
+  const paginatedPosts = filteredPosts.slice(
+    (safePage - 1) * PAGE_SIZE,
+    safePage * PAGE_SIZE
+  );
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen bg-background">

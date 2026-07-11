@@ -1,20 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Search } from "lucide-react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BlogCard from "@/components/blog/BlogCard";
+import BlogPagination from "@/components/blog/BlogPagination";
 import FloatingCTA from "@/components/blog/FloatingCTA";
 import { blogPosts, SEO_KEYWORDS } from "@/data/blogPosts";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 import { setPageSEO } from "@/lib/seo";
+
+const PAGE_SIZE = 9;
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
 
   // Dynamic SEO
   useEffect(() => {
@@ -33,12 +36,35 @@ const Blog = () => {
 
   const categories = [...new Set(blogPosts.map(post => post.category))];
 
-  const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = !selectedCategory || post.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const filteredPosts = useMemo(
+    () =>
+      blogPosts.filter((post) => {
+        const term = searchTerm.toLowerCase();
+        const matchesSearch =
+          post.title.toLowerCase().includes(term) ||
+          post.excerpt.toLowerCase().includes(term);
+        const matchesCategory = !selectedCategory || post.category === selectedCategory;
+        return matchesSearch && matchesCategory;
+      }),
+    [searchTerm, selectedCategory]
+  );
+
+  // Reset to first page when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedCategory]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredPosts.length / PAGE_SIZE));
+  const safePage = Math.min(currentPage, totalPages);
+  const paginatedPosts = filteredPosts.slice(
+    (safePage - 1) * PAGE_SIZE,
+    safePage * PAGE_SIZE
+  );
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -115,18 +141,30 @@ const Blog = () => {
             {selectedCategory ? `Artigos sobre ${selectedCategory}` : "Últimos artigos e estratégias"}
           </h2>
           {filteredPosts.length > 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredPosts.map((post, index) => (
-                <motion.div
-                  key={post.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <BlogCard post={post} />
-                </motion.div>
-              ))}
-            </div>
+            <>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {paginatedPosts.map((post, index) => (
+                  <motion.div
+                    key={post.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.05 }}
+                  >
+                    <BlogCard post={post} />
+                  </motion.div>
+                ))}
+              </div>
+
+              <BlogPagination
+                currentPage={safePage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+              />
+
+              <p className="mt-6 text-center text-sm text-muted-foreground">
+                Exibindo {(safePage - 1) * PAGE_SIZE + 1}–{Math.min(safePage * PAGE_SIZE, filteredPosts.length)} de {filteredPosts.length} artigos
+              </p>
+            </>
           ) : (
             <div className="text-center py-20">
               <p className="text-xl text-muted-foreground">

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, Calendar, Clock, User, Share2 } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 import { motion } from "framer-motion";
 import DOMPurify from "dompurify";
 import Header from "@/components/Header";
@@ -10,10 +10,11 @@ import BlogCTA from "@/components/blog/BlogCTA";
 import FloatingCTA from "@/components/blog/FloatingCTA";
 import MidArticleCTA from "@/components/blog/MidArticleCTA";
 import AdSlot from "@/components/AdSlot";
+import ArticleAudioPlayer from "@/components/blog/ArticleAudioPlayer";
+import ShareBar from "@/components/blog/ShareBar";
 import { getPostBySlug, getRelatedPosts, SEO_KEYWORDS } from "@/data/blogPosts";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { toast } from "sonner";
 import { setPageSEO, setJsonLd, removeJsonLd } from "@/lib/seo";
 
 const BlogPost = () => {
@@ -88,24 +89,14 @@ const BlogPost = () => {
     );
   }
 
-  const handleShare = async () => {
-    try {
-      await navigator.share({
-        title: post.title,
-        text: post.excerpt,
-        url: window.location.href,
-      });
-    } catch {
-      // Fallback: copy to clipboard
-      navigator.clipboard.writeText(window.location.href);
-      toast.success("Link copiado para a área de transferência!");
-    }
-  };
+  const shareUrl = typeof window !== "undefined"
+    ? window.location.href
+    : `https://metodotrader.online/blog/${post.slug}`;
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
@@ -114,7 +105,7 @@ const BlogPost = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-[720px] mx-auto"
           >
             <Link
               to="/blog"
@@ -123,54 +114,46 @@ const BlogPost = () => {
               <ArrowLeft className="w-4 h-4" />
               Voltar para o Blog
             </Link>
-            
+
             <Badge className="mb-4 bg-primary/90 text-primary-foreground">
               {post.category}
             </Badge>
-            
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5 leading-tight">
               {post.title}
             </h1>
-            
-            <div className="flex flex-wrap items-center gap-6 text-muted-foreground mb-8">
-              <span className="flex items-center gap-2">
-                <User className="w-5 h-5" />
+
+            {/* Author meta line */}
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground pb-2 border-b border-border/40">
+              <span className="flex items-center gap-1.5">
+                <User className="w-4 h-4" />
                 {post.author}
               </span>
-              <span className="flex items-center gap-2">
-                <Calendar className="w-5 h-5" />
+              <span className="flex items-center gap-1.5">
+                <Calendar className="w-4 h-4" />
                 {new Date(post.date).toLocaleDateString('pt-BR', {
                   day: '2-digit',
                   month: 'long',
                   year: 'numeric'
                 })}
               </span>
-              <span className="flex items-center gap-2">
-                <Clock className="w-5 h-5" />
-                {post.readTime} de leitura
+              <span className="flex items-center gap-1.5">
+                <Clock className="w-4 h-4" />
+                ⏱️ Leitura de {post.readTime}
               </span>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={handleShare}
-                className="text-primary hover:text-primary/80"
-              >
-                <Share2 className="w-5 h-5 mr-2" />
-                Compartilhar
-              </Button>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Featured Image */}
-      <section className="pb-12">
+      {/* Featured Image + Audio + Share */}
+      <section className="pb-8">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-[720px] mx-auto"
           >
             <div className="relative rounded-2xl overflow-hidden aspect-video">
               <img
@@ -180,6 +163,9 @@ const BlogPost = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
             </div>
+
+            <ArticleAudioPlayer readTime={post.readTime} title={post.title} />
+            <ShareBar url={shareUrl} title={post.title} variant="inline" />
           </motion.div>
         </div>
       </section>
@@ -206,7 +192,7 @@ const BlogPost = () => {
             const firstHalf = splitAt > 0 ? html.slice(0, splitAt) : html;
             const secondHalf = splitAt > 0 ? html.slice(splitAt) : "";
 
-            const proseClasses = `max-w-4xl mx-auto prose prose-invert prose-lg
+            const proseClasses = `max-w-[720px] mx-auto prose prose-invert prose-lg
               prose-headings:text-foreground prose-headings:font-bold prose-headings:tracking-tight
               prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-5 prose-h2:border-b prose-h2:border-border/30 prose-h2:pb-3 prose-h2:leading-snug
               prose-h3:text-xl md:prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4 prose-h3:leading-snug
@@ -243,7 +229,7 @@ const BlogPost = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-[720px] mx-auto">
                   <AdSlot slotId="articleTop" placement="article" />
                 </div>
 
@@ -255,7 +241,7 @@ const BlogPost = () => {
                 />
 
                 {secondHalf && (
-                  <div className="max-w-4xl mx-auto">
+                  <div className="max-w-[720px] mx-auto">
                     <MidArticleCTA category={post.category} variant="mid" />
                     <AdSlot slotId="articleInline" placement="article" />
                   </div>
@@ -275,7 +261,7 @@ const BlogPost = () => {
 
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
-            <div className="max-w-4xl mx-auto mt-8 pt-6 border-t border-border/30">
+            <div className="max-w-[720px] mx-auto mt-8 pt-6 border-t border-border/30">
               <h4 className="text-sm font-semibold text-muted-foreground mb-3">Tags:</h4>
               <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
@@ -287,9 +273,10 @@ const BlogPost = () => {
             </div>
           )}
 
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-[720px] mx-auto">
             <MidArticleCTA category={post.category} variant="final" />
             <AdSlot slotId="articleEnd" placement="article" />
+            <ShareBar url={shareUrl} title={post.title} variant="inline" />
           </div>
         </div>
       </section>
@@ -324,6 +311,7 @@ const BlogPost = () => {
       )}
 
       <FloatingCTA />
+      <ShareBar url={shareUrl} title={post.title} variant="floating" />
       <Footer />
     </div>
   );

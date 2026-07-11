@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, Calendar, Clock, User, Share2 } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 import { motion } from "framer-motion";
 import DOMPurify from "dompurify";
 import Header from "@/components/Header";
@@ -10,10 +10,11 @@ import BlogCTA from "@/components/blog/BlogCTA";
 import FloatingCTA from "@/components/blog/FloatingCTA";
 import MidArticleCTA from "@/components/blog/MidArticleCTA";
 import AdSlot from "@/components/AdSlot";
+import ArticleAudioPlayer from "@/components/blog/ArticleAudioPlayer";
+import ShareBar from "@/components/blog/ShareBar";
 import { getPostBySlug, getRelatedPosts, SEO_KEYWORDS } from "@/data/blogPosts";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { toast } from "sonner";
 import { setPageSEO, setJsonLd, removeJsonLd } from "@/lib/seo";
 
 const BlogPost = () => {

@@ -16,7 +16,7 @@ const Index = () => {
   useEffect(() => {
     setPageSEO({
       title: "Método Trader | Estratégias, Gerenciamento e Análise de Mercado",
-      description: "Aprenda as melhores estratégias de trading no portal Método Trader. Conteúdo educativo sobre opções binárias, análise de mercado e foco em consistência.",
+      description: "Portal Método Trader: estratégias testadas, gerenciamento de banca e análises para opções binárias, criptomoedas e trading nas principais corretoras.",
       path: "/",
       ogType: "website",
     });

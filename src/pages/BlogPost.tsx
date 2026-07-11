@@ -311,6 +311,7 @@ const BlogPost = () => {
       )}
 
       <FloatingCTA />
+      <ShareBar url={shareUrl} title={post.title} variant="floating" />
       <Footer />
     </div>
   );

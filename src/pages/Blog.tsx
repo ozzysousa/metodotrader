@@ -1,16 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Search } from "lucide-react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BlogCard from "@/components/blog/BlogCard";
+import BlogPagination from "@/components/blog/BlogPagination";
 import FloatingCTA from "@/components/blog/FloatingCTA";
 import { blogPosts, SEO_KEYWORDS } from "@/data/blogPosts";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 import { setPageSEO } from "@/lib/seo";
+
+const PAGE_SIZE = 9;
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");

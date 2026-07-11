@@ -141,18 +141,30 @@ const Blog = () => {
             {selectedCategory ? `Artigos sobre ${selectedCategory}` : "Últimos artigos e estratégias"}
           </h2>
           {filteredPosts.length > 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredPosts.map((post, index) => (
-                <motion.div
-                  key={post.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <BlogCard post={post} />
-                </motion.div>
-              ))}
-            </div>
+            <>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {paginatedPosts.map((post, index) => (
+                  <motion.div
+                    key={post.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.05 }}
+                  >
+                    <BlogCard post={post} />
+                  </motion.div>
+                ))}
+              </div>
+
+              <BlogPagination
+                currentPage={safePage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+              />
+
+              <p className="mt-6 text-center text-sm text-muted-foreground">
+                Exibindo {(safePage - 1) * PAGE_SIZE + 1}–{Math.min(safePage * PAGE_SIZE, filteredPosts.length)} de {filteredPosts.length} artigos
+              </p>
+            </>
           ) : (
             <div className="text-center py-20">
               <p className="text-xl text-muted-foreground">

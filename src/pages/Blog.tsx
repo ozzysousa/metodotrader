@@ -22,8 +22,8 @@ const Blog = () => {
   // Dynamic SEO
   useEffect(() => {
     setPageSEO({
-      title: "Blog MétodoTrader | Estratégias e Análise Técnica",
-      description: "Estratégias de trading, análise técnica e mindset trader. Conteúdo exclusivo do MétodoTrader para operar na IQ Option com segurança.",
+      title: "Blog Método Trader | Estratégias e Análise Técnica",
+      description: "Estratégias de trading, análise técnica e mindset trader. Conteúdo exclusivo do Método Trader para operar com segurança.",
       path: "/blog",
       ogType: "website",
     });

@@ -3,7 +3,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-const BASE = "https://metodotrader.lovable.app";
+const BASE = "https://metodotrader.online";
 const today = new Date().toISOString().slice(0, 10);
 
 const staticRoutes = [

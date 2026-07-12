@@ -48,12 +48,15 @@
     <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/2hZmlPr7Pib0Y7hn3hct70zcnKb2/social-images/social-1769653761698-Gemini_Generated_Image_ysecyysecyysecyy.png">
 
     <!-- Inter font agora é servida localmente via @fontsource/inter (ver src/main.tsx). -->
+    <!-- LCP boost: preload the hero poster with high priority -->
+    <link rel="preload" as="image" href="/hero-poster.jpg" fetchpriority="high" />
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
     <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin>
     <link rel="preconnect" href="https://cdn.gpteng.co" crossorigin>
     <link rel="dns-prefetch" href="https://images.unsplash.com">
     <link rel="dns-prefetch" href="https://upload.wikimedia.org">
     <link rel="dns-prefetch" href="https://cdn.gpteng.co">
+
     <!-- Per-route og:title/og:description/twitter:title/twitter:description are set dynamically by setPageSEO. -->
 
 

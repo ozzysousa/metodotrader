@@ -3,46 +3,32 @@ import { TrendingUp, Shield, Clock } from "lucide-react";
 import TradingChart from "@/components/TradingChart";
 import ScrollReveal from "@/components/ScrollReveal";
 import heroVideo from "@/assets/hero-video.mp4";
-import { useEffect, useState } from "react";
 
 const AFFILIATE_LINK = "https://iqoption.net/land/start-trading/pt/?aff=1616&afftrack=metodotrader&aff_model=revenue";
+const HERO_POSTER = "/hero-poster.jpg";
 
 const Hero = () => {
-  const [showVideo, setShowVideo] = useState(false);
-
-  useEffect(() => {
-    // Defer video mount until after first paint to protect LCP
-    const id = window.requestIdleCallback
-      ? window.requestIdleCallback(() => setShowVideo(true))
-      : window.setTimeout(() => setShowVideo(true), 1200);
-    return () => {
-      if (window.cancelIdleCallback && typeof id === "number") {
-        try { window.cancelIdleCallback(id); } catch {}
-      } else {
-        clearTimeout(id as number);
-      }
-    };
-  }, []);
-
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      {/* Video Background (deferred to protect LCP) */}
+      {/* Video Background — poster shows instantly for a fast LCP; video streams metadata only */}
       <div className="absolute inset-0 z-0">
-        {showVideo && (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="none"
-            aria-hidden="true"
-            className="w-full h-full object-cover opacity-40"
-          >
-            <source src={heroVideo} type="video/mp4" />
-          </video>
-        )}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={HERO_POSTER}
+          aria-hidden="true"
+          // @ts-expect-error fetchPriority is a valid HTML attribute not yet fully typed
+          fetchpriority="high"
+          className="w-full h-full object-cover opacity-40"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
       </div>
+
       {/* Animated Trading Chart Background */}
       <TradingChart />
       {/* Background Effects */}

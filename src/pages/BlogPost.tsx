@@ -159,10 +159,15 @@ const BlogPost = () => {
               <img
                 src={post.image}
                 alt={post.title}
+                loading="lazy"
+                decoding="async"
+                width={1280}
+                height={720}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
             </div>
+
 
             <ArticleAudioPlayer readTime={post.readTime} title={post.title} />
             <ShareBar url={shareUrl} title={post.title} variant="inline" />
@@ -197,13 +202,14 @@ const BlogPost = () => {
               prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-5 prose-h2:border-b prose-h2:border-border/30 prose-h2:pb-3 prose-h2:leading-snug
               prose-h3:text-xl md:prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4 prose-h3:leading-snug
               prose-h4:text-lg prose-h4:mt-8 prose-h4:mb-3
-              prose-p:text-muted-foreground prose-p:leading-[1.95] prose-p:mb-8 prose-p:text-justify
-              prose-li:text-muted-foreground prose-li:mb-4 prose-li:leading-relaxed prose-li:pl-1
+              prose-p:text-gray-300 prose-p:leading-[1.95] prose-p:mb-6 prose-p:text-justify
+              prose-li:text-gray-300 prose-li:mb-4 prose-li:leading-relaxed prose-li:pl-1
               prose-strong:text-foreground prose-strong:font-semibold
               prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-a:font-medium
               prose-code:text-primary prose-code:bg-primary/10 prose-code:px-2 prose-code:py-1 prose-code:rounded
               prose-pre:bg-card/50 prose-pre:border prose-pre:border-border/50
-              prose-blockquote:border-primary prose-blockquote:bg-primary/5 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic
+              prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:bg-primary/10 prose-blockquote:text-gray-200 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic prose-blockquote:my-8
+
               prose-table:border-border/50
               prose-th:text-foreground prose-th:bg-card/50 prose-th:p-3 prose-th:text-left
               prose-td:text-muted-foreground prose-td:border-border/30 prose-td:p-3

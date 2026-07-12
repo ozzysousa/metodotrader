@@ -15,7 +15,7 @@ import { setPageSEO, setJsonLd, removeJsonLd } from "@/lib/seo";
 const Index = () => {
   useEffect(() => {
     setPageSEO({
-      title: "Método Trader | Estratégias, Gerenciamento e Análise de Mercado",
+      title: "Método Trader | Estratégias e Gerenciamento de Banca",
       description: "Portal Método Trader: estratégias testadas, gerenciamento de banca e análises para opções binárias, criptomoedas e trading nas principais corretoras.",
       path: "/",
       ogType: "website",

@@ -36,7 +36,11 @@ const RecentArticles = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {recentPosts.map((post, index) => (
             <ScrollReveal key={post.slug} delay={index * 0.1}>
-              <Link to={`/blog/${post.slug}`} className="group block h-full">
+              <Link
+                to={`/blog/${post.slug}`}
+                className="group block h-full"
+                aria-label={`Ler artigo sobre ${post.title}`}
+              >
                 <article className="h-full flex flex-col rounded-2xl overflow-hidden glass-card border border-border/30 hover:border-primary/40 transition-all duration-500">
                   {/* Image */}
                   <div className="relative overflow-hidden aspect-video">
@@ -60,8 +64,8 @@ const RecentArticles = () => {
                       {post.excerpt}
                     </p>
                     <div className="flex items-center text-primary font-semibold group-hover:gap-2 transition-all">
-                      Leia Mais
-                      <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+                      <span>Ler artigo sobre {post.title}</span>
+                      <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1 shrink-0" />
                     </div>
                   </div>
                 </article>

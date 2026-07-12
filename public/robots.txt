@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://metodotrader.lovable.app/sitemap.xml
+Sitemap: https://metodotrader.online/sitemap.xml

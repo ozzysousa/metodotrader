@@ -16,8 +16,13 @@ const BlogCard = ({ post }: BlogCardProps) => {
           <img
             src={post.image}
             alt={post.title}
+            loading="lazy"
+            decoding="async"
+            width={800}
+            height={450}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
+
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
           <Badge className="absolute top-4 left-4 bg-primary/90 text-primary-foreground">
             {post.category}

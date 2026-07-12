@@ -159,10 +159,15 @@ const BlogPost = () => {
               <img
                 src={post.image}
                 alt={post.title}
+                loading="lazy"
+                decoding="async"
+                width={1280}
+                height={720}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
             </div>
+
 
             <ArticleAudioPlayer readTime={post.readTime} title={post.title} />
             <ShareBar url={shareUrl} title={post.title} variant="inline" />

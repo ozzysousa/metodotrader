@@ -2,13 +2,23 @@
   "redirects": [
     {
       "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "(?!^metodotrader\\.online$)(.*)"
+        }
+      ],
       "destination": "https://metodotrader.online/$1",
       "permanent": true
     }
   ],
   "rewrites": [
     {
-      "source": "/((?!sitemap.xml).*)",
+      "source": "/sitemap.xml",
+      "destination": "/sitemap.xml"
+    },
+    {
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]

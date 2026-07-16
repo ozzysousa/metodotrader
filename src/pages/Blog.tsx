@@ -98,7 +98,10 @@ const Blog = () => {
             <div className="relative max-w-md mx-auto">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
               <Input
-                type="text"
+                type="search"
+                id="blog-search"
+                name="blog-search"
+                aria-label="Buscar artigos do blog"
                 placeholder="Buscar artigos..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}

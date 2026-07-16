@@ -10,18 +10,18 @@ const HERO_POSTER = "/hero-poster.jpg";
 const Hero = () => {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      {/* Video Background — poster shows instantly for a fast LCP; video streams metadata only */}
+      {/* Video Background — poster shows instantly for a fast LCP; video is lazy (preload=none) so it never competes with the H1/hero paint. */}
       <div className="absolute inset-0 z-0">
         <video
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           poster={HERO_POSTER}
           aria-hidden="true"
-          // @ts-expect-error fetchPriority is a valid HTML attribute not yet fully typed
-          fetchpriority="high"
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover opacity-40"
         >
           <source src={heroVideo} type="video/mp4" />

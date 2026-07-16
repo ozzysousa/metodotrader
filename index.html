@@ -39,13 +39,17 @@
     <!-- Google AdSense (verification meta — script é carregado dinamicamente após consentimento de cookies em src/components/AdSlot.tsx) -->
     <meta name="google-adsense-account" content="ca-pub-2486849619385192" />
 
-    <!-- Sitewide fallback for non-JS social crawlers. Per-route og:title/og:description/og:type are set dynamically in src/lib/seo.ts. -->
+    <!-- Sitewide fallback for non-JS social crawlers. Per-route og:title/og:description/og:url are overwritten dynamically in src/lib/seo.ts (dedupe by property). -->
+    <meta property="og:title" content="Método Trader | Estratégias e Gerenciamento de Banca" />
+    <meta property="og:description" content="Portal Método Trader: estratégias testadas, gerenciamento de banca e análises para trading de opções binárias e criptomoedas." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://metodotrader.online/" />
     <meta property="og:site_name" content="Método Trader" />
     <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/2hZmlPr7Pib0Y7hn3hct70zcnKb2/social-images/social-1769653761698-Gemini_Generated_Image_ysecyysecyysecyy.png">
     <meta property="og:locale" content="pt_BR" />
     <meta name="twitter:card" content="summary_large_image" />
-    
-    
+    <meta name="twitter:title" content="Método Trader | Estratégias e Gerenciamento de Banca" />
+    <meta name="twitter:description" content="Portal Método Trader: estratégias testadas, gerenciamento de banca e análises para trading de opções binárias e criptomoedas." />
     <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/2hZmlPr7Pib0Y7hn3hct70zcnKb2/social-images/social-1769653761698-Gemini_Generated_Image_ysecyysecyysecyy.png">
 
     <!-- Inter font agora é servida localmente via @fontsource/inter (ver src/main.tsx). -->

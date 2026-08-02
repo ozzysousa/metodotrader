@@ -43,20 +43,23 @@ const Index = () => {
       <main>
         <Hero />
         <AdSlot slotId="homeHeader" placement="header" />
-        <Assets />
-        <Benefits />
-        <AdSlot slotId="homeMid" placement="inline" />
-        <RecentArticles />
-        <Testimonials />
-        <div className="container mx-auto px-4 lg:px-8">
-          <BlogCTA />
-        </div>
-        <FAQ />
-        <div className="container mx-auto px-4 lg:px-8">
-          <BlogCTA />
-        </div>
-        <AdSlot slotId="homeFooter" placement="footer" />
-        <SignupForm />
+        <Suspense fallback={<div className="min-h-[400px]" />}>
+          <Assets />
+          <Benefits />
+          <AdSlot slotId="homeMid" placement="inline" />
+          <RecentArticles />
+          <Testimonials />
+          <div className="container mx-auto px-4 lg:px-8">
+            <BlogCTA />
+          </div>
+          <FAQ />
+          <div className="container mx-auto px-4 lg:px-8">
+            <BlogCTA />
+          </div>
+          <AdSlot slotId="homeFooter" placement="footer" />
+          <SignupForm />
+        </Suspense>
+
       </main>
       <Footer />
     </div>

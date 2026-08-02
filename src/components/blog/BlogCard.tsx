@@ -3,6 +3,8 @@ import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { BlogPost } from "@/data/blogPosts";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { unsplashUrl, unsplashSrcSet, CARD_SIZES } from "@/lib/images";
+
 
 interface BlogCardProps {
   post: BlogPost;

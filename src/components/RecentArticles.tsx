@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 import { blogPosts } from "@/data/blogPosts";
+import { unsplashUrl, unsplashSrcSet, CARD_SIZES } from "@/lib/images";
 
 const RecentArticles = () => {
   const recentPosts = blogPosts.slice(0, 3);
@@ -45,8 +46,14 @@ const RecentArticles = () => {
                   {/* Image */}
                   <div className="relative overflow-hidden aspect-video">
                     <img
-                      src={post.image}
+                      src={unsplashUrl(post.image, 600)}
+                      srcSet={unsplashSrcSet(post.image)}
+                      sizes={CARD_SIZES}
                       alt={post.title}
+                      loading="lazy"
+                      decoding="async"
+                      width={800}
+                      height={450}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />

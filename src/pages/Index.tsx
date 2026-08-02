@@ -1,16 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Assets from "@/components/Assets";
-import Benefits from "@/components/Benefits";
-import RecentArticles from "@/components/RecentArticles";
-import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import SignupForm from "@/components/SignupForm";
 import Footer from "@/components/Footer";
-import BlogCTA from "@/components/blog/BlogCTA";
 import AdSlot from "@/components/AdSlot";
 import { setPageSEO, setJsonLd, removeJsonLd } from "@/lib/seo";
+
+// Seções abaixo da dobra: carregadas sob demanda para reduzir o bundle inicial.
+const Assets = lazy(() => import("@/components/Assets"));
+const Benefits = lazy(() => import("@/components/Benefits"));
+const RecentArticles = lazy(() => import("@/components/RecentArticles"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
+const FAQ = lazy(() => import("@/components/FAQ"));
+const SignupForm = lazy(() => import("@/components/SignupForm"));
+const BlogCTA = lazy(() => import("@/components/blog/BlogCTA"));
+
 
 const Index = () => {
   useEffect(() => {

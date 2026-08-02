@@ -14,7 +14,9 @@ const BlogCard = ({ post }: BlogCardProps) => {
       <Card className="group h-full overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(168_100%_42%/0.15)]">
         <div className="relative overflow-hidden aspect-video">
           <img
-            src={post.image}
+            src={unsplashUrl(post.image, 600)}
+            srcSet={unsplashSrcSet(post.image)}
+            sizes={CARD_SIZES}
             alt={post.title}
             loading="lazy"
             decoding="async"
@@ -22,6 +24,7 @@ const BlogCard = ({ post }: BlogCardProps) => {
             height={450}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
+
 
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
           <Badge className="absolute top-4 left-4 bg-primary/90 text-primary-foreground">
